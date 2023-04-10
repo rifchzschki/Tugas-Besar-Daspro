@@ -1,4 +1,5 @@
 # Fungsi-fungsi minor
+
 def panjang(array) -> int: 
 # Menghitung Panjang List
 # count : int
@@ -8,6 +9,9 @@ def panjang(array) -> int:
     return count
 
 def split(arr, pemisah) -> list:
+# Memisahkan data satu baris menjadi beberapa kolom
+# array: list of str
+# temp: str
     array = []
     temp = ""
     for i in arr:
@@ -30,6 +34,10 @@ def rewrite_csv(csv,file) -> None:
 
 def convert_array_csv(array) -> str:
 # mengubah array menjadi str berupa csv yang siap upload
+# index_baru, i, j, a: int
+# arr, data_csv : list of str
+
+
     # deklarasi arr 
     index_baru = panjang(array)
     arr = []
@@ -49,7 +57,8 @@ def convert_array_csv(array) -> str:
     return data_csv
 
 # Fungsi-Fungsi pembantu mayor
-# ------------------------------------------------------------Fungsi untuk login------------------------------------------------------------------------------------------
+
+# ------------------------------------------------------------Fungsi-Fungsi pembantu mayor------------------------------------------------------------------------------------------
 def ambil_data_tanpaKepala()-> list:
 # Mengambil data dari user.csv lalu mengolahnya menjadi data yang dapat diakses berupa array
 
@@ -109,14 +118,15 @@ def cek_password(username: str, password: str, data: list) -> bool:
                 if data[i][temp] == password:
                     benar = True
     return benar
-# -------------------------------------------------------Fungsi untuk login------------------------------------------------------------------------------------------
-# -------------------------------------------------Fungsi tambahan untuk summonjin-----------------------------------------------------------------------------------
+
 def validasi_password(password) -> bool:
+# Untuk memastikan bahwa password memenuhi persyaratan
     if panjang(password)<5 or panjang(password)>25:
         return False
     else:
         return True
 def masukkan_data_user(username, password, rule) -> None:
+# Memasukkan data ke user ke file csv
     # tambah data
     # ambil data lalu ubah ke array
     temp = ambil_data()
@@ -127,11 +137,11 @@ def masukkan_data_user(username, password, rule) -> None:
     rewrite_csv(data,"user")
 
 def cek_maks_jin() -> bool:
-    if panjang(ambil_data_tanpaKepala()) > 99:
+# Mengecek jumlah data user
+    if panjang(ambil_data_tanpaKepala()) >= 102: #(2 adalah akun bondowoso dengan roro)
         return True
     else:
         return False
-# -------------------------------------------------Fungsi tambahan untuk summonjin-----------------------------------------------------------------------------------
 
 # ---------------------------------------------------------Fungsi Utama----------------------------------------------------------------------------------------------
 def login() -> None:
@@ -141,6 +151,7 @@ def login() -> None:
 # Kamus Lokal
 # username,password : str
 
+# Algoritma
     username = input("Username: ")
     password = input("Password: ")
     print("")
@@ -155,14 +166,23 @@ def login() -> None:
         
 
 def summonjin() -> None:
-    if cek_maks_jin():
+# F3: Summon Jin
+# Akses Bondowoso dalam memanggil jin, Jin maksimal yang dapat dipanggil adalah 100.
+
+# Kamus Lokal
+# sesuai, username_sesuai, password_sesuai: bool
+# jenis: int
+# jin, password_jin, username_jin: str
+
+# Algoritma
+    if cek_maks_jin(): # Mengembalikan nilai True apabila jumlah jin sudah 100
         print("Jumalah Jin telah maksimal! (100 jin). Bandung tidak dapat men-summon lebih dari itu")
     else:
+        print("Jenis jin yang dapat dipanggil:")
+        print(" (1) Pengumpul - Bertugas mengumpulkan bahan bangunan")
+        print(" (2) Pembangun - Bertugas membangun candi\n")
         sesuai = False
-        while not sesuai:
-            print("Jenis jin yang dapat dipanggil:")
-            print(" (1) Pengumpul - Bertugas mengumpulkan bahan bangunan")
-            print(" (2) Pembangun - Bertugas membangun candi\n")
+        while not sesuai: #selama nomor jenis belum sesuai
             jenis = int(input("Masukkan nomor jenis jin yang ingin dipanggil: "))
             if jenis == 1 or jenis == 2:
                 if jenis == 1:
@@ -199,7 +219,16 @@ def summonjin() -> None:
                 print(f"\nTidak ada jenis jin bernomor \"{jenis}\"! \n")
 
 def hapusjin() -> None:
-# Menghapus Jin
+# F4: Hilangkan Jin 
+# Menghapus Jin, sekaligus menghapus candi yang telah dibuat oleh jin tersebut
+
+# Kamus Lokal
+# nama_jin: str
+# yakin: char
+# data, data_csv:  list of str
+# index: int
+
+# Algoritma
     nama_jin = input("Masukkan username jin : ") 
     if not cek_username(nama_jin, ambil_data_tanpaKepala()):
         print("\nTidak ada jin dengan username tersebut.")
@@ -211,17 +240,26 @@ def hapusjin() -> None:
             index = panjang(data)
             for i in range(1,index):
                 if data[i][0] == nama_jin:
-                    print(data[i][0])
                     data.pop(i)
                     break
             data_csv = convert_array_csv(data)
             rewrite_csv(data_csv,"user")
-            print(data)
+            
             print("\nJin telah berhasil dihapus dari alam gaib.")
         else:
             print("Oke, Baiklah...")
 
 def ubahjin() -> None:
+# F5: Ubah Tipe Jin
+# Mengubah tipe jin yang telah tersedia
+
+# Kamus Lokal
+# nama_jin, role, nama_role1, nama_role2, data_csv: str
+# data: list of str
+# kode_role: int
+# yakin: char
+
+# Algoritma
     nama_jin = input ("Masukkan username jin : ")
     data = ambil_data()
     if cek_username(nama_jin,ambil_data_tanpaKepala()):
@@ -256,4 +294,4 @@ def ubahjin() -> None:
     else:
         print("\nTidak ada jin dengan username tersebut.")
 
-def bangun(): #Akses jin Pembangun
+
