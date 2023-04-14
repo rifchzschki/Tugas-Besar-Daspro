@@ -1,6 +1,7 @@
 from modules.helper import *
 
-def login() -> None:
+
+def login(user: List) -> str:
 # F1: Login
 # Login menerima username dan password kemudian akan memunculkan output berupa kebenaran dari data akun
 
@@ -8,15 +9,19 @@ def login() -> None:
 # username,password : str
 
 # Algoritma
-    username = input("Username: ")
-    password = input("Password: ")
-    print("")
-    if cek_username(username,ambil_data_tanpaKepala("file/user.csv")):
-        if cek_password(username,password,ambil_data_tanpaKepala("file/user.csv")):
-            print(f"Selamat datang, {username}!")
-            print("Masukkan command \"help\" untuk daftar command yang dapat kamu panggil.")
+    while True:
+        username = input("Username: ")
+        password = input("Password: ")
+        print("")
+        if cek_username(username, user):
+            while  True:
+                if cek_password(username,password,user):
+                    print(f"Selamat datang, {username}!")
+                    print("Masukkan command \"help\" untuk daftar command yang dapat kamu panggil.")
+                    return username
+                else:
+                    print("Password salah!")
         else:
-            print("Password salah!")
-    else:
-        print("Username tidak terdaftar!")
+            print("Username tidak terdaftar!")
+            break
 

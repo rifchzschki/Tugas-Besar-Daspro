@@ -1,14 +1,16 @@
 # Fungsi-fungsi minor
+from typing import *
 
-def panjang(array) -> int: 
+def panjang(array: List) -> int: 
 # Menghitung Panjang List
 # count : int
     count = 0
-    for i in array:
+    while array[count:]:
         count +=1
     return count
 
-def split(arr, pemisah) -> list:
+
+def split(arr: List, pemisah: str) -> list:
 # Memisahkan data satu baris menjadi beberapa kolom
 # array: list of str
 # temp: str
@@ -26,13 +28,13 @@ def split(arr, pemisah) -> list:
     
 
 
-def rewrite_csv(csv,file) -> None:
+def rewrite_csv(csv: str, file: str) -> None:
 # Mengupdate file
     f = open(f"file/{file}.csv", "w")
     f.write(csv)
     f.close()
 
-def convert_array_csv(array) -> str:
+def convert_array_csv(array: list) -> str:
 # mengubah array menjadi str berupa csv yang siap upload
 # index_baru, i, j, a: int
 # arr, data_csv : list of str
@@ -59,7 +61,7 @@ def convert_array_csv(array) -> str:
 # Fungsi-Fungsi pembantu mayor
 
 # ------------------------------------------------------------Fungsi-Fungsi pembantu mayor------------------------------------------------------------------------------------------
-def ambil_data_tanpaKepala(loc)-> list:
+def ambil_data_tanpaKepala(loc: str )-> list:
 # Mengambil data dari user.csv lalu mengolahnya menjadi data yang dapat diakses berupa array
 
 # Kamus Lokal
@@ -125,20 +127,28 @@ def validasi_password(password) -> bool:
         return False
     else:
         return True
-def masukkan_data_user(username, password, rule) -> None:
+def masukkan_data_user(username, password, rule, user) -> None:
 # Memasukkan data ke user ke file csv
     # tambah data
     # ambil data lalu ubah ke array
-    temp = ambil_data("file/user.csv")
+    temp = user
     temp.append([username, password, rule])   
-    # ubah ke csv
-    data = convert_array_csv(temp)
-    # simpan ke data user.csv
-    rewrite_csv(data,"user")
+    user = temp
+    # # ubah ke csv
+    # data = convert_array_csv(temp)
+    # # simpan ke data array sementara
+    # rewrite_csv(data,"user")
 
-def cek_maks_jin() -> bool:
+def cek_maks_jin(user) -> bool:
 # Mengecek jumlah data user
-    if panjang(ambil_data_tanpaKepala("file/user.csv")) >= 102: #(2 adalah akun bondowoso dengan roro)
+    if panjang(user) >= 102: #(2 adalah akun bondowoso dengan roro)
         return True
     else:
         return False
+
+def role(user: List, nama_jin: str):
+    data = user
+    for i in range(panjang(user)):
+        if data[i][0] == nama_jin:
+            jin = data[i][2]
+    return jin

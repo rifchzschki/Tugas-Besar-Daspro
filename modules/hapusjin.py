@@ -1,6 +1,6 @@
-from helper import *
+from modules.helper import *
 
-def hapusjin() -> None:
+def hapusjin(user) -> None:
 # F4: Hilangkan Jin 
 # Menghapus Jin, sekaligus menghapus candi yang telah dibuat oleh jin tersebut
 
@@ -12,22 +12,20 @@ def hapusjin() -> None:
 
 # Algoritma
     nama_jin = input("Masukkan username jin : ") 
-    if not cek_username(nama_jin, ambil_data_tanpaKepala("file/user.csv")):
+    if not cek_username(nama_jin, user):
         print("\nTidak ada jin dengan username tersebut.")
 
     else:
         yakin = input(f"Apakah anda yakin ingin menghapus jin dengan username {nama_jin} (Y/N)? ")
         if yakin == "Y" or yakin == "y":
-            data = ambil_data("file/user.csv")
+            data = user
             index = panjang(data)
             for i in range(1,index):
                 if data[i][0] == nama_jin:
                     data.pop(i)
                     break
-            data_csv = convert_array_csv(data)
-            rewrite_csv(data_csv,"user")
+            user = data
             
             print("\nJin telah berhasil dihapus dari alam gaib.")
         else:
             print("Oke, Baiklah...")
-hapusjin()
