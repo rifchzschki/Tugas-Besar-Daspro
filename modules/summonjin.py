@@ -1,6 +1,6 @@
-from helper import *
+from modules.helper import *
 
-def summonjin() -> None:
+def summonjin(user) -> None:
 # F3: Summon Jin
 # Akses Bondowoso dalam memanggil jin, Jin maksimal yang dapat dipanggil adalah 100.
 
@@ -10,7 +10,7 @@ def summonjin() -> None:
 # jin, password_jin, username_jin: str
 
 # Algoritma
-    if cek_maks_jin(): # Mengembalikan nilai True apabila jumlah jin sudah 100
+    if cek_maks_jin(user): # Mengembalikan nilai True apabila jumlah jin sudah 100
         print("Jumalah Jin telah maksimal! (100 jin). Bandung tidak dapat men-summon lebih dari itu")
     else:
         print("Jenis jin yang dapat dipanggil:")
@@ -29,7 +29,7 @@ def summonjin() -> None:
                 username_sesuai = False
                 while not username_sesuai:
                     username_jin = input("\nMasukkan username jin: ")
-                    if not cek_username(username_jin, ambil_data_tanpaKepala("file/user.csv")): #jika tidak ada data username di user.csv
+                    if not cek_username(username_jin, user): #jika tidak ada data username di user.csv
                         username_sesuai = True
                         password_sesuai = False
                         while not password_sesuai:
@@ -41,7 +41,7 @@ def summonjin() -> None:
                                 print("Membacakan mantra...")
                                 password_sesuai = True
                                 sesuai = True
-                                masukkan_data_user(username_jin, password_jin, f"jin_{jin}")
+                                masukkan_data_user(username_jin, password_jin, f"jin_{jin}", user)
                                 print("\nJin Ifrit berhasil dipanggil!")
                             else:
                                 print("")
@@ -53,4 +53,3 @@ def summonjin() -> None:
             else:
                 print(f"\nTidak ada jenis jin bernomor \"{jenis}\"! \n")
 
-summonjin()
