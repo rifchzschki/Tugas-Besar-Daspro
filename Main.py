@@ -293,5 +293,3 @@ def ubahjin() -> None:
         print("\nJin telah berhasil diubah")
     else:
         print("\nTidak ada jin dengan username tersebut.")
-
-
