@@ -9,19 +9,28 @@ def login(user: List) -> str:
 # username,password : str
 
 # Algoritma
-    while True:
-        username = input("Username: ")
-        password = input("Password: ")
-        print("")
+    username = input("Username: ")
+    password = input("Password: ")
+    username_sudah_benar = False
+    while not username_sudah_benar:
         if cek_username(username, user):
-            while  True:
+            username_sudah_benar = True
+            password_sudah_benar = False
+            while not password_sudah_benar:
                 if cek_password(username,password,user):
-                    print(f"Selamat datang, {username}!")
+                    print(f"\nSelamat datang, {username}!")
                     print("Masukkan command \"help\" untuk daftar command yang dapat kamu panggil.")
                     return username
-                else:
-                    print("Password salah!")
-        else:
-            print("Username tidak terdaftar!")
-            break
+            
+                print("\nPassword salah!\n")
+                username = input("Username: ")
+                password = input("Password: ")
+                password_sudah_benar = True
+
+        
+        print("\nUsername tidak terdaftar!\n")
+        username = input("Username: ")
+        password = input("Password: ")
+        username_sudah_benar = False
+        
 

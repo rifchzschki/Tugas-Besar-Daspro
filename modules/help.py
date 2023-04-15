@@ -14,10 +14,10 @@ def help(role):
             print ("==================== HELP ====================")
             print ("1. logout \nUntuk keluar dari akun yang digunakan sekarang \n2. hancurkancandi \nUntuk menghancurkan candi yang tersedia")
             print ("3. ayamberkokok \nUntuk menyelesaikan permainan dengan memalsukan pagi har")
-        elif role == "jin_pengumpul":
+        elif role == "jin_Pengumpul":
             print ("==================== HELP ====================")
             print ("1. logout \nUntuk keluar dari akun yang digunakan sekarang \n2. kumpul \nUntuk mengumpulkan resource candi")
-        elif role == "jin_pembangun":
+        elif role == "jin_Pembangun":
             print ("==================== HELP ====================")
             print ("1. logout \nUntuk keluar dari akun yang digunakan sekarang \n2. bangun \nUntuk membangun candi")
         else :

@@ -32,5 +32,8 @@ README.md
     * exit --> output jika masukan selain y/n<br> 
     * kumpul --> jangan cuma print tapi harus bisa nyimpen di array program utama<br>
     * logout --> (coba nnti liat main.py yang baru trs liat codenya), gw ada ide gmn klo logout ini dalam bentuk fungsi trs return nya berupa boolean pengganti logout di main.py<br>
-    * login --> kondisi ketika False masih unsolved
+    * login --> kondisi ketika False masih unsolved {
+        1. ketika pertama kali login, pass salah. lalu memasukan password benar, munculnya username tidak terdaftar.
+        2. ketika setelah login user pertama, lalu logout kemudian login lagi dengan user baru, error
+    }
 ---
