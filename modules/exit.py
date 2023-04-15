@@ -4,5 +4,5 @@ def exit() -> None:
     if (yakin == "Y") or (yakin == "y"):
         pass#return ... (save)
     else :
-        os._exit(1)
+        os._exit(1) #ini function buat terminate program gitu gw pakenya, jadi kalo dia ketik 'n' or 'N' itu bakal auto keluar dari program
 

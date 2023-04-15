@@ -1,15 +1,3 @@
-def kumpul():
-    array = [0 for i in range (3)]
-    p = lcg(1)    
-    print (f"Jin menemukan {p[0]} pasir, {p[1]} batu, dan {p[2]} air.")
-    for i in range (3):
-        array[i] = p[i]
-    return (array) 
-
-
-
-# LCG
-# LCG formula --> X(k+1) = ((a * Xk) + c) % m
 import time
 
 def lcg(x):
@@ -25,5 +13,3 @@ def lcg(x):
         arr[i] = (rd%6)
         num_base = rd + i
     return (arr)
-
-kumpul()
