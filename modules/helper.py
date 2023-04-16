@@ -146,7 +146,7 @@ def cek_maks_jin(user) -> bool:
     else:
         return False
 
-def role(user: List, nama_jin: str)-> str:
+def role_user(user: List, nama_jin: str)-> str:
     data = user
     for i in range(panjang(user)):
         if data[i][0] == nama_jin:

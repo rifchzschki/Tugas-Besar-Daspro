@@ -26,4 +26,3 @@ def lcg(x):
         num_base = rd + i
     return (arr)
 
-kumpul()
