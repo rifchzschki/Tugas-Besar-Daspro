@@ -7,6 +7,8 @@ from modules.ubahjin import *
 from modules.exit import *
 from modules.help import *
 from modules.jinpengumpul import *
+from modules.hancurkancandi import *
+from modules.ayamberkokok import *
 
 
 import os
@@ -57,11 +59,11 @@ while not com1:
                     help(role)
                     command_roro = input(">>> ")
                 elif command_roro == "hancurkancandi":
-                    # hancurkancandi()
+                    hancurkancandi()
                     
                     ...
                 elif command_roro == "ayamberkokok":
-                    # ayamberkokok()
+                    ayamberkokok()
                     ...
                 elif command_roro == "logout":
                     logout = True
