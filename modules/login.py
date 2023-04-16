@@ -1,4 +1,5 @@
 from modules.helper import *
+from typing import *
 
 
 def login(user: List) -> str:
@@ -21,16 +22,16 @@ def login(user: List) -> str:
                     print(f"\nSelamat datang, {username}!")
                     print("Masukkan command \"help\" untuk daftar command yang dapat kamu panggil.")
                     return username
-            
-                print("\nPassword salah!\n")
-                username = input("Username: ")
-                password = input("Password: ")
+                else:
+                    print("\nPassword salah!\n")    
+                    username = input("Username: ")
+                    password = input("Password: ")
                 password_sudah_benar = True
 
-        
-        print("\nUsername tidak terdaftar!\n")
-        username = input("Username: ")
-        password = input("Password: ")
+        else:
+            print("\nUsername tidak terdaftar!\n")
+            username = input("Username: ")
+            password = input("Password: ")
         username_sudah_benar = False
         
 
