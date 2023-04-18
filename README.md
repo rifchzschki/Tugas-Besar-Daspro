@@ -41,4 +41,6 @@ README.md
 
 * (18/042023)<br>
     * Array sudah statis dengan value kosong diberi tanda "none"
-    * fungsi yang sudah selesai => (summonjin, hapusjin, ubahjin, login, logout, load, ayamberkokok, help, randomnumber, jinpengumpul)
+    * fungsi yang sudah selesai => (summonjin, hapusjin, ubahjin, login, logout, load, ayamberkokok, help, randomnumber, jinpengumpul, jinpembangun, hancurkancandi, exit)
+    * fungsi yang belum => (save, laporancandi, laporanjin, batchkumpul/bangun)
+    * helper blm dirapihin

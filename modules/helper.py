@@ -1,7 +1,3 @@
-# Fungsi-fungsi minor
-# from typing import *
-
-
 def split(arr: list, pemisah: str) -> list:
 # Memisahkan data satu baris menjadi beberapa kolom
 # array: list of str
@@ -140,6 +136,8 @@ def masukkan_data_user(username, password, role, user) -> None:
             index +=1
     temp[index] = [username, password, role]          
     user = temp
+
+
     
 # p = [[1,2,3],[4,5,6],["none", "none", "none"]]
 # print(masukkan_data_user(1,2,3,p,3))

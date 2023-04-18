@@ -1,7 +1,15 @@
+def cek_candi(candi, hancurkan):
+    i = 0
+    found = False
+    while i < 101 and not found:
+        if candi[i][0] == hancurkan:
+            found = True
+        i+=1
+    return found        
+        
 def hancurkancandi(candi):
     hancurkan = int(input('Masukkan ID candi: '))
     YorN = False
-
     while not YorN:
         yakin = input(f'Apakah Anda yakin ingin menghancurkan candi ID: {hancurkan} (Y/N)? ')
         if yakin == 'Y' or yakin=='y':
@@ -17,12 +25,3 @@ def hancurkancandi(candi):
             YorN = True
         else:
             continue
-
-def cek_candi(candi, hancurkan):
-    i = 0
-    found = False
-    while i < 101 and not found:
-        if candi[i][0] == hancurkan:
-            found = True
-    return found        
-        

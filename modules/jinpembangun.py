@@ -1,37 +1,49 @@
 from modules.helper import *
 from modules.randomnumber import *
-from folder_game.save_1 import *
 
-def cekbahan(pasir, batu, air):
-    if pasir >= bahan_bangunan[0][2] or batu >= bahan_bangunan[1][2] or air >= bahan_bangunan[2][2]: 
+
+def cekbahan(bahan, pasir, batu, air):
+    if bahan[1][2] == "none":
         return False
+    else:
+        if pasir > bahan[1][2] or batu > bahan[2][2] or air > bahan[3][2]: 
+            return False
+        else :
+            return True
+        
+def masukkan_data_candi(pembuat, pasir, batu, air, candi) -> None:
+# Memasukkan data ke user ke file csv
+    # tambah data
+    # ambil data lalu ubah ke array
+    temp = candi
+    index = 0
+    found = False
+    while index < 101 and not found :
+        for j in range(5):
+            if temp[index][0]== 'none':
+                found = True
+        if not found:
+            index +=1
+    temp[index] = [index, pembuat, pasir, batu, air]          
+    candi = temp
+
+def bangun(username, bahan, candi, jumlah_candi):
+    p = lcg(1)
+    pasir = p[0]
+    batu = p[1]        
+    air = p[2]
+    if cekbahan (bahan, pasir, batu, air):
+        bahan[1][2] = int(bahan[1][2]) - pasir           
+        bahan[2][2] = int(bahan[2][2]) - batu
+        bahan[3][2] = int(bahan[3][2]) - air  
+
+        if jumlah_candi <= 100:
+            masukkan_data_candi(username, pasir, batu, air, candi)
+            print("Candi berhasil dibangun")
+            print (f"Sisa candi yang perlu dibangun: {100-jumlah_candi}")
+        else:
+            print ("Candi tidak bisa dibangun.")
+            print("Sisa candi yang perlu dibangun: 0")
     else :
-        return True
-
-def bangun():
-        if role == "jin_Pembangun":
-            p = lcg(1)
-            pasir = p[0]
-            batu = p[1]        
-            air = p[2]
-            if cekbahan (pasir, batu, air):
-                bahan_bangunan[0][2] = int(bahan_bangunan[0][2]) - pasir           
-                bahan_bangunan[1][2] = int(bahan_bangunan[1][2]) - batu
-                bahan_bangunan[2][2] = int(bahan_bangunan[2][2]) - air  
-                jumlahcandi = 0
-                for i in range (100):
-                    if candi[i] == None:
-                        break
-                    else :
-                        jumlahcandi += 1
-
-                if jumlahcandi <= 100:
-                    candi = candi.append_bikinan(candi, [id, user, pasir, batu, air])
-                    print("Candi berhasil dibangun")
-                    print (f"Sisa candi yang perlu dibangun: {100-jumlahcandi}")
-                else:
-                    print ("Candi tidak bisa dibangun.")
-                    print("Sisa candi yang perlu dibangun: 0")
-            else :
-                print ("Bahan bangunan tidak mencukupi.")
-                print ("Candi tidak bisa dibangun.")
+        print ("Bahan bangunan tidak mencukupi.")
+        print ("Candi tidak bisa dibangun.")

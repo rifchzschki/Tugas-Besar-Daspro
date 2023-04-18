@@ -1,4 +1,3 @@
-
 from modules.helper import *
 from modules.load import *
 from modules.login import *
@@ -8,7 +7,8 @@ from modules.ubahjin import *
 from modules.exit import *
 from modules.help import *
 from modules.jinpengumpul import *
-# from modules.hancurkancandi import *
+from modules.jinpembangun import *
+from modules.hancurkancandi import *
 from modules.ayamberkokok import *
 
 
@@ -52,9 +52,6 @@ while not com1:
     elif command == "login" and not sudah_login:
         sudah_login = True
         username = login(user, panjang_user)
-        # print(username)
-        # print(user)
-        # print(str(role_user(user, username, panjang_user)))
         if role_user(user, username, panjang_user) == "roro_jonggrang":
             role = role_user(user, username, panjang_user)
             command_roro = input(">>> ")
@@ -64,7 +61,8 @@ while not com1:
                     help(role)
                     command_roro = input(">>> ")
                 elif command_roro == "hancurkancandi":
-                    # hancurkancandi()
+                    hancurkancandi(candi)
+                    command_roro = input(">>> ")
                     ...
                 elif command_roro == "ayamberkokok":
                     ayamberkokok(panjang_candi)
@@ -131,8 +129,8 @@ while not com1:
                     help(role)
                     command_jin_pembangun = input(">>> ")
                 elif command_jin_pembangun == "bangun":
-                    # bangun()
-                    ...
+                    bangun(username, bahan, candi, panjang_candi)
+                    command_jin_pembangun = input(">>> ")
                 elif command_jin_pembangun == "logout":
                     logout = True
                     sudah_login = False
@@ -152,7 +150,6 @@ while not com1:
                     command_jin_pengumpul = input(">>> ")
                 elif command_jin_pengumpul == "kumpul":
                     kumpul(bahan)
-                    print (bahan)
                     command_jin_pengumpul = input(">>> ")
                     ...
                 elif command_jin_pengumpul == "logout":
