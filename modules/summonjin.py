@@ -1,6 +1,6 @@
 from modules.helper import *
 
-def summonjin(user) -> None:
+def summonjin(user, panjang) -> None:
 # F3: Summon Jin
 # Akses Bondowoso dalam memanggil jin, Jin maksimal yang dapat dipanggil adalah 100.
 
@@ -10,7 +10,7 @@ def summonjin(user) -> None:
 # jin, password_jin, username_jin: str
 
 # Algoritma
-    if cek_maks_jin(user): # Mengembalikan nilai True apabila jumlah jin sudah 100
+    if panjang >= 103: # Mengembalikan nilai True apabila jumlah jin sudah 100
         print("Jumalah Jin telah maksimal! (100 jin). Bandung tidak dapat men-summon lebih dari itu")
     else:
         print("Jenis jin yang dapat dipanggil:")
@@ -29,7 +29,7 @@ def summonjin(user) -> None:
                 username_sesuai = False
                 while not username_sesuai:
                     username_jin = input("\nMasukkan username jin: ")
-                    if not cek_username(username_jin, user): #jika tidak ada data username di user.csv
+                    if not cek_username(username_jin, user, panjang): #jika tidak ada data username di user.csv
                         username_sesuai = True
                         password_sesuai = False
                         while not password_sesuai:
@@ -43,6 +43,7 @@ def summonjin(user) -> None:
                                 sesuai = True
                                 masukkan_data_user(username_jin, password_jin, f"jin_{jin}", user)
                                 print("\nJin Ifrit berhasil dipanggil!")
+                                
                             else:
                                 print("")
                                 print("Password panjangnya harus 5-25 karakter!")

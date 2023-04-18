@@ -1,3 +1,4 @@
+
 from modules.helper import *
 from modules.load import *
 from modules.login import *
@@ -7,24 +8,28 @@ from modules.ubahjin import *
 from modules.exit import *
 from modules.help import *
 from modules.jinpengumpul import *
-from modules.hancurkancandi import *
+# from modules.hancurkancandi import *
 from modules.ayamberkokok import *
+
 
 
 import os
 
 
 load()
-# global data_user
-# global data_candi
-# global data_bahan_bangunan
+
+
 # (array yang sudah tinggal pakai)
 # data_user (kolomnya 3 per baris)
 # data_candi (kolomnya 5 per baris)
 # data_bahan_bangunan (kolomnya 3 per baris)
+# panjang_user_max = 103
+# panjang_candi_max = 101 
+
 user = data_user
 candi = data_candi
-bahan = data_bahan_bangunan
+bahan = data_bahan
+
 
 
 print ('''
@@ -34,7 +39,7 @@ print ('''
 ▐█▄▪▐█▐█▄▄▌▐█▌▐▌▐█ ▪▐▌██ ██▌▐█▌▐█ ▪▐▌▐█▌·    ██. ██ ▐█ ▪▐▌▐█▌·▐█ ▪▐▌██▐█▌▐█▄▪▐█
  ▀▀▀▀  ▀▀▀ .▀▀▀  ▀  ▀ ▀▀  █▪▀▀▀ ▀  ▀ ▀▀▀     ▀▀▀▀▀•  ▀  ▀ ▀▀▀  ▀  ▀ ▀▀ █▪·▀▀▀▀ 
 ''')
-
+print("Type any character for help")
 
 sudah_login = False
 com1 = False
@@ -46,12 +51,12 @@ while not com1:
         help(role)
     elif command == "login" and not sudah_login:
         sudah_login = True
-        username = login(user)
-        print(username)
-        print(user)
-        print(str(role_user(user, username)))
-        if role_user(user, username) == "roro_jonggrang":
-            role = role_user(user, username)
+        username = login(user, panjang_user)
+        # print(username)
+        # print(user)
+        # print(str(role_user(user, username, panjang_user)))
+        if role_user(user, username, panjang_user) == "roro_jonggrang":
+            role = role_user(user, username, panjang_user)
             command_roro = input(">>> ")
             logout = False
             while not logout:
@@ -59,16 +64,15 @@ while not com1:
                     help(role)
                     command_roro = input(">>> ")
                 elif command_roro == "hancurkancandi":
-                    hancurkancandi()
-                    
+                    # hancurkancandi()
                     ...
                 elif command_roro == "ayamberkokok":
-                    ayamberkokok()
-                    ...
+                    ayamberkokok(panjang_candi)
+                    
                 elif command_roro == "logout":
                     logout = True
                     sudah_login = False
-                    del role
+                    
                 elif command_roro == "login" and sudah_login:
                     print(f"Login gagal!\nAnda telah login dengan username {username}, silahkan lakukan \"logout\" sebelum melakukan login kembali.")
                     command_roro = input(">>> ")
@@ -76,8 +80,8 @@ while not com1:
                     help(role)
                     command_roro = input(">>> ")
 
-        elif role_user(user, username) == "bandung_bondowoso":
-            role = role_user(user, username)
+        elif role_user(user, username, panjang_user) == "bandung_bondowoso":
+            role = role_user(user, username, panjang_user)
             command_bandung = input(">>> ")
             logout = False
             while not logout:
@@ -86,15 +90,17 @@ while not com1:
                     command_bandung = input(">>> ")
                     ...
                 elif command_bandung == "summonjin":
-                    summonjin(user) # data user sudah diupdate
+                    summonjin(user, panjang_user) # data user sudah diupdate
+                    panjang_user +=1
                     command_bandung = input(">>> ")
                     ...
                 elif command_bandung == "hapusjin":
-                    hapusjin(user)
+                    hapusjin(user, panjang_user)
+                    panjang_user -=1
                     command_bandung = input(">>> ")
                     ...
                 elif command_bandung == "ubahjin":
-                    ubahjin(user)
+                    ubahjin(user, panjang_user)
                     command_bandung = input(">>> ")
                     ...
                 elif command_bandung == "batchkumpul":
@@ -109,15 +115,15 @@ while not com1:
                 elif command_bandung == "logout":
                     logout = True
                     sudah_login = False
-                    del role
+                    
                 elif command_bandung == "login" and sudah_login:
                     print(f"Login gagal!\nAnda telah login dengan username {username}, silahkan lakukan \"logout\" sebelum melakukan login kembali.")
                     command_bandung = input(">>> ")
                 else:
                     help(role)
                     command_bandung = input(">>> ")
-        elif role_user(user, username) == "jin_Pembangun":
-            role = role_user(user, username)
+        elif role_user(user, username, panjang_user) == "jin_Pembangun":
+            role = role_user(user, username, panjang_user)
             command_jin_pembangun = input(">>> ")
             logout = False
             while not logout:
@@ -130,15 +136,14 @@ while not com1:
                 elif command_jin_pembangun == "logout":
                     logout = True
                     sudah_login = False
-                    del role
                 elif command_jin_pembangun == "login" and sudah_login:
                     print(f"Login gagal!\nAnda telah login dengan username {username}, silahkan lakukan \"logout\" sebelum melakukan login kembali.")
                     command_jin_pembangun = input(">>> ")
                 else:
                     help(role)
                     command_jin_pembangun = input(">>> ")
-        elif role_user(user, username) == "jin_Pengumpul":
-            role = role_user(user, username)
+        elif role_user(user, username, panjang_user) == "jin_Pengumpul":
+            role = role_user(user, username, panjang_user)
             command_jin_pengumpul = input(">>> ")
             logout = False
             while not logout:
@@ -146,13 +151,13 @@ while not com1:
                     help(role)
                     command_jin_pengumpul = input(">>> ")
                 elif command_jin_pengumpul == "kumpul":
-                    kumpul()
+                    kumpul(bahan)
+                    print (bahan)
                     command_jin_pengumpul = input(">>> ")
                     ...
                 elif command_jin_pengumpul == "logout":
                     logout = True
                     sudah_login = False
-                    del role
                 elif command_jin_pengumpul == "login" and sudah_login:
                     print(f"Login gagal!\nAnda telah login dengan username {username}, silahkan lakukan \"logout\" sebelum melakukan login kembali.")
                     command_jin_pengumpul = input(">>> ")

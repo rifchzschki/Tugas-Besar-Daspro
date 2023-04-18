@@ -1,7 +1,7 @@
 from modules.helper import *
 
 
-def ubahjin(user) -> None:
+def ubahjin(user, panjang) -> None:
 # F5: Ubah Tipe Jin
 # Mengubah tipe jin yang telah tersedia
 
@@ -14,8 +14,8 @@ def ubahjin(user) -> None:
 # Algoritma
     nama_jin = input ("Masukkan username jin : ")
     data = user
-    if cek_username(nama_jin, user):
-        for i in range(panjang(user)):
+    if cek_username(nama_jin, user, panjang):
+        for i in range(panjang):
             if data[i][0] == nama_jin:
                 role = data[i][2]
             
@@ -38,7 +38,7 @@ def ubahjin(user) -> None:
             if (yakin == "Y") or (yakin == "y"):
                 role = "jin_Pembangun"
         
-        for i in range(panjang(user)):
+        for i in range(panjang):
             if data[i][0] == nama_jin:
                 data[i][2] = role
         user = data
