@@ -46,6 +46,6 @@ README.md
     * helper blm dirapihin
 
 * (21/04/2023) <br>
-    * fungsi yang sudah ditambahkan => (batchkumpul/bangun)
-    * fungsi yang belum => (save, laporancandi, laporanjin)
+    * fungsi yang sudah ditambahkan => (batchkumpul/bangun, save)
+    * fungsi yang belum => (laporancandi, laporanjin)
     * helper blm dirapihin
