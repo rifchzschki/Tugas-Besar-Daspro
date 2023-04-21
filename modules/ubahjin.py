@@ -19,11 +19,11 @@ def ubahjin(user, panjang) -> None:
             if data[i][0] == nama_jin:
                 role = data[i][2]
             
-        if role == "jin_Pembangun":
+        if role == "jin_pembangun":
             kode_role = 0
             nama_role1 = "Pembangun"
             nama_role2 = "Pengumpul"
-        elif role == "jin_Pengumpul":
+        elif role == "jin_pengumpul":
             kode_role = 1
             nama_role1 = "Pengumpul"
             nama_role2 = "Pembangun"
@@ -31,12 +31,12 @@ def ubahjin(user, panjang) -> None:
         if kode_role == 0:
             yakin = input(f"Jin ini bertipe \"{nama_role1}\". Yakin ingin mengubah ke tipe \"{nama_role2}\" (Y/N)? ")
             if (yakin == "Y") or (yakin == "y"):
-                role = "jin_Pengumpul"
+                role = "jin_pengumpul"
     
         elif kode_role == 1:
             yakin = input(f"Jin ini bertipe \"{nama_role1}\". Yakin ingin mengubah ke tipe \"{nama_role2}\" (Y/N)? ")
             if (yakin == "Y") or (yakin == "y"):
-                role = "jin_Pembangun"
+                role = "jin_pembangun"
         
         for i in range(panjang):
             if data[i][0] == nama_jin:

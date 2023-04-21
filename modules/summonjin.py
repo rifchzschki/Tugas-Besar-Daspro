@@ -22,8 +22,10 @@ def summonjin(user, panjang) -> None:
             if jenis == 1 or jenis == 2:
                 if jenis == 1:
                     jin = "Pengumpul"
+                    role_jin = "pengumpul"
                 else:
                     jin = "Pembangun"
+                    role_jin = "pembangun"
                 print("")
                 print(f"Memilih jin \"{jin}\".")
                 username_sesuai = False
@@ -41,7 +43,7 @@ def summonjin(user, panjang) -> None:
                                 print("Membacakan mantra...")
                                 password_sesuai = True
                                 sesuai = True
-                                masukkan_data_user(username_jin, password_jin, f"jin_{jin}", user)
+                                masukkan_data_user(username_jin, password_jin, f"jin_{role_jin}", user)
                                 print("\nJin Ifrit berhasil dipanggil!")
                                 
                             else:

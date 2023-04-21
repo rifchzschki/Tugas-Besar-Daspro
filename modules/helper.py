@@ -153,9 +153,9 @@ def masukkan_data_user(username, password, role, user) -> None:
 #     else:
 #         return False
 
-def role_user(user: list, nama_jin: str, panjang: int)-> str:
+def role_user(user: list, nama_jin: str)-> str:
     data = user
-    for i in range(panjang):
+    for i in range(103):
         if data[i][0] == nama_jin:
             jin = data[i][2]
     return jin

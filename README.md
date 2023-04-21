@@ -44,3 +44,8 @@ README.md
     * fungsi yang sudah selesai => (summonjin, hapusjin, ubahjin, login, logout, load, ayamberkokok, help, randomnumber, jinpengumpul, jinpembangun, hancurkancandi, exit)
     * fungsi yang belum => (save, laporancandi, laporanjin, batchkumpul/bangun)
     * helper blm dirapihin
+
+* (21/04/2023) <br>
+    * fungsi yang sudah ditambahkan => (batchkumpul/bangun)
+    * fungsi yang belum => (save, laporancandi, laporanjin)
+    * helper blm dirapihin

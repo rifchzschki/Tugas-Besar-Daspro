@@ -6,7 +6,7 @@ def lcg(x):
     c = [74, 1013904223, 1]
     m = [2**16 + 1, 2**32, 2**32]
     unit = 3
-    num_base = seed + x
+    num_base = seed + (x*18)%5
     arr = [0 for i in range(unit)]
     for i in range(unit):
         rd = (a[i] * num_base + c[i]) % m[i]

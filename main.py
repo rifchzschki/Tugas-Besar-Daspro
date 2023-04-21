@@ -10,6 +10,7 @@ from modules.jinpengumpul import *
 from modules.jinpembangun import *
 from modules.hancurkancandi import *
 from modules.ayamberkokok import *
+from modules.batchkumpulbangun import *
 
 
 
@@ -52,8 +53,8 @@ while not com1:
     elif command == "login" and not sudah_login:
         sudah_login = True
         username = login(user, panjang_user)
-        if role_user(user, username, panjang_user) == "roro_jonggrang":
-            role = role_user(user, username, panjang_user)
+        if role_user(user, username) == "roro_jonggrang":
+            role = role_user(user, username)
             command_roro = input(">>> ")
             logout = False
             while not logout:
@@ -78,8 +79,8 @@ while not com1:
                     help(role)
                     command_roro = input(">>> ")
 
-        elif role_user(user, username, panjang_user) == "bandung_bondowoso":
-            role = role_user(user, username, panjang_user)
+        elif role_user(user, username) == "bandung_bondowoso":
+            role = role_user(user, username)
             command_bandung = input(">>> ")
             logout = False
             while not logout:
@@ -102,7 +103,14 @@ while not com1:
                     command_bandung = input(">>> ")
                     ...
                 elif command_bandung == "batchkumpul":
-                    # batchkumpul()
+                    batchkumpul(user, bahan)
+                    # print(bahan)
+                    command_bandung = input (">>> ")
+                    ...
+                elif command_bandung == "batchbangun":
+                    batchbangun(user, bahan)
+                    # print(bahan)
+                    command_bandung = input (">>> ")
                     ...
                 elif command_bandung == "laporanjin":
                     # laporanjin()
@@ -120,8 +128,8 @@ while not com1:
                 else:
                     help(role)
                     command_bandung = input(">>> ")
-        elif role_user(user, username, panjang_user) == "jin_Pembangun":
-            role = role_user(user, username, panjang_user)
+        elif role_user(user, username) == "jin_pembangun":
+            role = role_user(user, username)
             command_jin_pembangun = input(">>> ")
             logout = False
             while not logout:
@@ -140,8 +148,8 @@ while not com1:
                 else:
                     help(role)
                     command_jin_pembangun = input(">>> ")
-        elif role_user(user, username, panjang_user) == "jin_Pengumpul":
-            role = role_user(user, username, panjang_user)
+        elif role_user(user, username) == "jin_pengumpul":
+            role = role_user(user, username)
             command_jin_pengumpul = input(">>> ")
             logout = False
             while not logout:
