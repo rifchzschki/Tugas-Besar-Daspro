@@ -17,36 +17,6 @@ def split(arr: list, pemisah: str) -> list:
 
 
 
-# def rewrite_csv(csv: str, file: str) -> None:
-# # Mengupdate file
-#     f = open(f"file/{file}.csv", "w")
-#     f.write(csv)
-#     f.close()
-
-# def convert_array_csv(array: list) -> str:
-# # mengubah array menjadi str berupa csv yang siap upload
-# # index_baru, i, j, a: int
-# # arr, data_csv : list of str
-
-
-#     # deklarasi arr 
-#     index_baru = panjang(array)
-#     arr = []
-#     # tambah data baru ke array
-#     for i in range (index_baru):
-#         arr += array[i]
-#     # buat data akhir
-#     i=-1
-#     while i < (panjang (arr)-2):
-#         i += 3 
-#         arr[i] += "\n"
-#     for j in range (panjang(arr)):
-#         a=2
-#         if j%3 != (2) :
-#             arr[j] += ";"    
-#     data_csv = "". join (arr)
-#     return data_csv
-
 # Fungsi-Fungsi pembantu mayor
 
 # ------------------------------------------------------------Fungsi-Fungsi pembantu mayor------------------------------------------------------------------------------------------
