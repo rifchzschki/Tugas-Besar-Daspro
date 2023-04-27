@@ -49,3 +49,13 @@ README.md
     * fungsi yang sudah ditambahkan => (batchkumpul/bangun, save)
     * fungsi yang belum => (laporancandi, laporanjin)
     * helper blm dirapihin
+
+* (24/04/2023) <br>
+    * masalah yang ditemukan : 
+        1. ~~batchbangun belum bisa menaruh data pembuat candi (jumlah sisa, data pembuat, id, bahan percandi)~~
+        2. ~~keanehan terjadi pada fungsi kumpul, jadi gabisa print~~
+        3. ~~pada fungsi save, tidak bisa menambahkan integer pada string pada convert_arr_str~~
+
+* (26/04/2023) <br>
+        1. ~~hapusjin hanya bisa hapus jin sekali~~
+        2. ~~jumlah candi batchbangun dengan bangun masih belum relevan~~

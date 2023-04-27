@@ -1,7 +1,6 @@
 import argparse
 import os
 import time
-from modules.helper import *
 from modules.inisialisasi_array import *
 
 
@@ -12,11 +11,9 @@ def load() -> None:
     global panjang_user
     global panjang_candi
     global panjang_bahan
-
     
     parser = argparse.ArgumentParser("python3 main.py <nama_folder>")
     parser.add_argument("nama_folder")
-
     args = parser.parse_args()
 
     print("Loading...\n")

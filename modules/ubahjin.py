@@ -1,5 +1,13 @@
-from modules.helper import *
+def cek_username(username: str, data: list, panjang:int) -> bool:
+# Mengecek Username
 
+# Kamus Lokal
+# benar: bool
+    benar = False
+    for i in range (panjang):
+        if data[i][0] == username:
+            benar = True
+    return benar
 
 def ubahjin(user, panjang) -> None:
 # F5: Ubah Tipe Jin
@@ -27,22 +35,28 @@ def ubahjin(user, panjang) -> None:
             kode_role = 1
             nama_role1 = "Pengumpul"
             nama_role2 = "Pembangun"
-            
+        else:
+            kode_role = 3
+        
         if kode_role == 0:
             yakin = input(f"Jin ini bertipe \"{nama_role1}\". Yakin ingin mengubah ke tipe \"{nama_role2}\" (Y/N)? ")
             if (yakin == "Y") or (yakin == "y"):
                 role = "jin_pengumpul"
+                print("\nJin telah berhasil diubah")
     
         elif kode_role == 1:
             yakin = input(f"Jin ini bertipe \"{nama_role1}\". Yakin ingin mengubah ke tipe \"{nama_role2}\" (Y/N)? ")
             if (yakin == "Y") or (yakin == "y"):
                 role = "jin_pembangun"
+                print("\nJin telah berhasil diubah")
+        else:
+            print("\nTidak ada jin dengan username tersebut.")
         
         for i in range(panjang):
             if data[i][0] == nama_jin:
                 data[i][2] = role
         user = data
-        print("\nJin telah berhasil diubah")
+        
     else:
         print("\nTidak ada jin dengan username tersebut.")
 

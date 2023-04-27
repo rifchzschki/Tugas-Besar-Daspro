@@ -1,57 +1,19 @@
-def split(arr: list, pemisah: str) -> list:
-# Memisahkan data satu baris menjadi beberapa kolom
-# array: list of str
-# temp: str
-    array = []
-    temp = ""
-    for i in arr:
-        if i == pemisah:
-            array.append(temp)
-            temp = ""
-        else:
-            temp += i
-    if temp :
-        array.append(temp)
-    return array
+# def split(arr: list, pemisah: str) -> list:
+# # Memisahkan data satu baris menjadi beberapa kolom
+# # array: list of str
+# # temp: str
+#     array = []
+#     temp = ""
+#     for i in arr:
+#         if i == pemisah:
+#             array.append(temp)
+#             temp = ""
+#         else:
+#             temp += i
+#     if temp :
+#         array.append(temp)
+#     return array
     
-
-
-
-# Fungsi-Fungsi pembantu mayor
-
-# ------------------------------------------------------------Fungsi-Fungsi pembantu mayor------------------------------------------------------------------------------------------
-# def ambil_data_tanpaKepala(loc: str )-> list:
-# # Mengambil data dari user.csv lalu mengolahnya menjadi data yang dapat diakses berupa array
-
-# # Kamus Lokal
-# # raw_lines, lines, raw_header, data, daftar_akun : list of str
-
-#     f = open(f"{loc}", "r")
-#     raw_lines = f.readlines()
-#     f.close()
-#     lines = [raw_line.replace("\n", "") for raw_line in raw_lines]
-#     raw_header = lines.pop(0)
-#     data = []
-#     for line in lines:
-#         daftar_akun = split(line, ";")
-#         data.append(daftar_akun)
-#     return data
-
-# def ambil_data(loc) -> list:
-# # Mengambil data dari user.csv lalu mengolahnya menjadi data yang dapat diakses berupa array
-
-# # Kamus Lokal
-# # raw_lines, lines, raw_header, data, daftar_akun : list of str
-
-#     f = open(f"{loc}", "r")
-#     raw_lines = f.readlines()
-#     f.close()
-#     lines = [raw_line.replace("\n", "") for raw_line in raw_lines]
-#     data = []
-#     for line in lines:
-#         daftar_akun = split(line, ";")
-#         data.append(daftar_akun)
-#     return data
 
 def cek_username(username: str, data: list, panjang:int) -> bool:
 # Mengecek Username
@@ -60,9 +22,8 @@ def cek_username(username: str, data: list, panjang:int) -> bool:
 # benar: bool
     benar = False
     for i in range (panjang):
-        for j in range(2):
-            if data[i][0] == username:
-                benar = True
+        if data[i][0] == username:
+            benar = True
     return benar
 
 def cek_password(username: str, password: str, data: list, panjang:int) -> bool:
@@ -80,11 +41,11 @@ def cek_password(username: str, password: str, data: list, panjang:int) -> bool:
                     benar = True
     return benar
 
-def panjang(string : str)->int:
-    count = 0
-    for i in string:
-        count+=1
-    return count
+# def panjang(string : str)->int:
+#     count = 0
+#     for i in string:
+#         count+=1
+#     return count
 def validasi_password(password) -> bool:
 # Untuk memastikan bahwa password memenuhi persyaratan
     if panjang(password)<5 or panjang(password)>25:

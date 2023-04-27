@@ -1,4 +1,3 @@
-from modules.helper import *
 from modules.load import *
 from modules.login import *
 from modules.summonjin import *
@@ -12,10 +11,14 @@ from modules.hancurkancandi import *
 from modules.ayamberkokok import *
 from modules.batchkumpulbangun import *
 from modules.save import *
-
-
 import os
 
+def role_user(user: list, nama_jin: str)-> str:
+    data = user
+    for i in range(103):
+        if data[i][0] == nama_jin:
+            jin = data[i][2]
+    return jin
 
 load()
 
@@ -30,8 +33,6 @@ user = data_user
 candi = data_candi
 bahan = data_bahan
 
-# print(user)
-# print(bahan)
 
 print ('''
 .▄▄ · ▄▄▄ .▄▄▌   ▄▄▄· • ▌ ▄ ·.  ▄▄▄·▄▄▄▄▄    ·▄▄▄▄   ▄▄▄·▄▄▄▄▄ ▄▄▄·  ▐ ▄  ▄▄ • 
@@ -96,7 +97,7 @@ while not com1:
                     command_bandung = input(">>> ")
                     ...
                 elif command_bandung == "hapusjin":
-                    hapusjin(user, panjang_user)
+                    hapusjin(user, candi, panjang_user, panjang_candi)
                     panjang_user -=1
                     command_bandung = input(">>> ")
                     ...
@@ -106,12 +107,11 @@ while not com1:
                     ...
                 elif command_bandung == "batchkumpul":
                     batchkumpul(user, bahan)
-                    # print(bahan)
                     command_bandung = input (">>> ")
                     ...
                 elif command_bandung == "batchbangun":
-                    batchbangun(user, bahan)
-                    # print(bahan)
+                    batchbangun(user, bahan, candi, panjang_user, panjang_candi)
+                    panjang_candi += jumlah_jin(user, "jin_pembangun")
                     command_bandung = input (">>> ")
                     ...
                 elif command_bandung == "laporanjin":
@@ -144,6 +144,7 @@ while not com1:
                     command_jin_pembangun = input(">>> ")
                 elif command_jin_pembangun == "bangun":
                     bangun(username, bahan, candi, panjang_candi)
+                    panjang_candi += 1
                     command_jin_pembangun = input(">>> ")
                 elif command_jin_pembangun == "logout":
                     logout = True
@@ -168,7 +169,6 @@ while not com1:
                 elif command_jin_pengumpul == "kumpul":
                     kumpul(bahan)
                     command_jin_pengumpul = input(">>> ")
-                    ...
                 elif command_jin_pengumpul == "logout":
                     logout = True
                     sudah_login = False

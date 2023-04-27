@@ -1,4 +1,36 @@
-from modules.helper import *
+def cek_username(username: str, data: list, panjang:int) -> bool:
+# Mengecek Username
+
+# Kamus Lokal
+# benar: bool
+    benar = False
+    for i in range (panjang):
+        if data[i][0] == username:
+            benar = True
+    return benar
+
+def validasi_password(password: str) -> bool:
+# Untuk memastikan bahwa password memenuhi persyaratan
+    if len(password)<5 or len(password)>25:
+        return False
+    else:
+        return True
+
+def masukkan_data_user(username, password, role, user) -> None:
+# Memasukkan data ke user ke file csv
+    # tambah data
+    # ambil data lalu ubah ke array
+    temp = user
+    index = 0
+    found = False
+    while index < 103 and not found :
+        for j in range(3):
+            if temp[index][0]== 'none':
+                found = True
+        if not found:
+            index +=1
+    temp[index] = [username, password, role]          
+    user = temp
 
 def summonjin(user, panjang) -> None:
 # F3: Summon Jin

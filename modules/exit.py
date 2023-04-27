@@ -7,5 +7,4 @@ def exit(user, candi, bahan) -> None:
         save(user,candi,bahan)
         os._exit(0)
     else :
-        os._exit(0) #ini function buat terminate program gitu gw pakenya, jadi kalo dia ketik 'n' or 'N' itu bakal auto keluar dari program
-
+        os._exit(0) 

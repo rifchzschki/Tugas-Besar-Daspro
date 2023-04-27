@@ -1,12 +1,10 @@
-from modules.helper import *
 from modules.randomnumber import *
-
 
 def cekbahan(bahan, pasir, batu, air):
     if bahan[1][2] == "none":
         return False
     else:
-        if pasir > bahan[1][2] or batu > bahan[2][2] or air > bahan[3][2]: 
+        if pasir > int(bahan[1][2]) or batu > int(bahan[2][2]) or air > int(bahan[3][2]): 
             return False
         else :
             return True

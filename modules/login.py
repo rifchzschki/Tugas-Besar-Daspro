@@ -1,8 +1,31 @@
-from modules.helper import *
-from typing import *
+def cek_username(username: str, data: list, panjang:int) -> bool:
+# Mengecek Username
+
+# Kamus Lokal
+# benar: bool
+    benar = False
+    for i in range (panjang):
+        if data[i][0] == username:
+            benar = True
+    return benar
+
+def cek_password(username: str, password: str, data: list, panjang:int) -> bool:
+# Mengecek Password
+
+# Kamus Lokal
+# benar: bool
+# temp: int 
+    benar = False
+    for i in range(panjang):
+        for j in range(2):
+            if data[i][j] == username:
+                temp = j+1
+                if data[i][temp] == password:
+                    benar = True
+    return benar
 
 
-def login(user: List, panjang: int) -> str:
+def login(user: list, panjang: int) -> str:
 # F1: Login
 # Login menerima username dan password kemudian akan memunculkan output berupa kebenaran dari data akun
 

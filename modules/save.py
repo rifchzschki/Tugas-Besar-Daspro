@@ -11,18 +11,23 @@ def rewrite_csv(csv: str, file: str, folder_save) -> None:
 def conv_arr_str(arr, nama_arr):
     if nama_arr == "user":
         panjang = 103
+        kolom = 3
     elif nama_arr == "candi":
         panjang = 101
+        kolom = 5
     else:
-        panjang = 2
+        panjang = 4
+        kolom = 3
 
     string = ""
     for i in range (panjang):
         if arr[i][0] != "none":
-            for j in range (3):
-                string += arr[i][j]
-                string += ";"
-            string += "\n"
+            for j in range (kolom):
+                string += str(arr[i][j])
+                if j != (kolom-1):
+                    string += ";"
+                else:
+                    string += "\n"
     return string
 
 
@@ -45,7 +50,7 @@ def save(user, candi, bahan):
         print(f"Membuat folder folder_game/{folder_save}...")
         rewrite_csv(user_str, "user", folder_save)
         rewrite_csv(candi_str, "candi", folder_save)
-        rewrite_csv(bahan_str, "bahan", folder_save)
+        rewrite_csv(bahan_str, "bahan_bangunan", folder_save)
         print(f"Berhasil menyimpan data di folder folder_game/{folder_save}!")
 
     else:
@@ -57,13 +62,13 @@ def save(user, candi, bahan):
 
             rewrite_csv(user_str, "user", folder_save)
             rewrite_csv(candi_str, "candi", folder_save)
-            rewrite_csv(bahan_str, "bahan", folder_save)
+            rewrite_csv(bahan_str, "bahan_bangunan", folder_save)
             print(f"Berhasil menyimpan data di folder folder_game/{folder_save}!")
         
         else:
             rewrite_csv(user_str, "user", folder_save)
             rewrite_csv(candi_str, "candi", folder_save)
-            rewrite_csv(bahan_str, "bahan", folder_save)
+            rewrite_csv(bahan_str, "bahan_bangunan", folder_save)
             print(f"Berhasil menyimpan data di folder folder_game/{folder_save}!")
     os.chdir("../")
 
