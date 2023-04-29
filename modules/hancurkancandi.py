@@ -10,7 +10,7 @@ def cek_candi(candi, hancurkan):
 def hancurkancandi(candi):
     hancurkan = int(input('Masukkan ID candi: '))
     if hancurkan > 100:
-        print("Tidak ada candi dengan id tersebut.") 
+        print("Tidak ada candi dengan ID tersebut.") 
     else:
         YorN = False
         if cek_candi(candi, hancurkan):
