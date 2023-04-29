@@ -20,17 +20,15 @@ def masukkan_data_user(username, password, role, user) -> None:
 # Memasukkan data ke user ke file csv
     # tambah data
     # ambil data lalu ubah ke array
-    temp = user
-    index = 0
+    
+    i = 0
     found = False
-    while index < 103 and not found :
-        for j in range(3):
-            if temp[index][0]== 'none':
-                found = True
+    while i < 103 and not found :
+        if user[i][0]== 'none':
+            found = True
         if not found:
-            index +=1
-    temp[index] = [username, password, role]          
-    user = temp
+            i +=1
+    user[i] = [username, password, role]          
 
 def summonjin(user, panjang) -> None:
 # F3: Summon Jin
@@ -76,7 +74,7 @@ def summonjin(user, panjang) -> None:
                                 password_sesuai = True
                                 sesuai = True
                                 masukkan_data_user(username_jin, password_jin, f"jin_{role_jin}", user)
-                                print("\nJin Ifrit berhasil dipanggil!")
+                                print(f"\nJin {username_jin} berhasil dipanggil!")
                                 
                             else:
                                 print("")
