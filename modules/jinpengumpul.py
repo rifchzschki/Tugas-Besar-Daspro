@@ -1,7 +1,7 @@
 from modules.randomnumber import *
 
 
-def kumpul(bahan)-> None:
+def kumpul(bahan: list)-> None:
     p = lcg(1)    
     print (f"Jin menemukan {p[0]} pasir, {p[1]} batu, dan {p[2]} air.")
     if bahan[1][2] == "none":

@@ -1,14 +1,14 @@
 from modules.randomnumber import *
 
-def jumlah_jin(data, role):
+def jumlah_jin(user:list, role:str) -> int:
     count = 0
     for i in range (103):
-        if data[i][2] == role:
+        if user[i][2] == role:
             count += 1
     return count
 
-def kumpul_bahan(bahan):
-    p = lcg(1)    
+def kumpul_bahan(bahan:list) -> list:
+    p = lcg(1)
     data_bahan = [p[0], p[1], p[2]]
     if bahan[1][2] == "none":
         bahan[1] =["pasir", "desc", data_bahan[0]]
@@ -23,7 +23,7 @@ def kumpul_bahan(bahan):
         bahan[3] =["air", "desc", air]
     return data_bahan
 
-def batchkumpul(user, bahan):
+def batchkumpul(user: list, bahan: list)-> None:
     jumlah = jumlah_jin(user, "jin_pengumpul")
     data_bahan = [0,0,0]
     if jumlah == 0 :
@@ -40,19 +40,19 @@ def batchkumpul(user, bahan):
         print(f"Jin menemukan total {data_bahan[0]} pasir, {data_bahan[1]} batu, dan {data_bahan[2]} air.")
 
     
-def cekbahan(bahan, pasir, batu, air):
+def cekbahan(bahan: list, pasir: int, batu: int, air: int)->bool:
     if pasir > int(bahan[1][2]) or batu > int(bahan[2][2]) or air > int(bahan[3][2]): 
         return False
     else :
         return True
     
-def isNone (bahan):
+def isNone (bahan: list)->bool:
     if bahan[1][2] == "none":
         return True
     else:
         return False
     
-def isNeg (bil):
+def isNeg (bil: int)->int:
     if bil<0:
         return 0
     else:
@@ -62,19 +62,16 @@ def masukkan_data_candi(pembuat, pasir, batu, air, candi) -> None:
 # Memasukkan data ke user ke file csv
     # tambah data
     # ambil data lalu ubah ke array
-    temp = candi
     index = 0
     found = False
     while index < 101 and not found :
-        for j in range(5):
-            if temp[index][0]== 'none':
-                found = True
+        if candi[index][0]== 'none':
+            found = True
         if not found:
             index +=1
-    temp[index] = [index, pembuat, pasir, batu, air]          
-    candi = temp
+    candi[index] = [index, pembuat, pasir, batu, air]          
 
-def cekcandi (candi):
+def cekcandi (candi: list)->bool:
     count = 0
     for i in range (101):
         if candi[i][1] != "none":
@@ -85,7 +82,7 @@ def cekcandi (candi):
     else:
         return False
 
-def batchbangun(user, bahan, candi, jumlah_user, panjang_candi):
+def batchbangun(user: list, bahan: list, candi: list, jumlah_user: int, panjang_candi: int)->None:
     jumlah = jumlah_jin(user, "jin_pembangun")
     panjang_candi += jumlah
     if jumlah == 0:

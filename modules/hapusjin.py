@@ -27,10 +27,9 @@ def hapusjin(user, candi, panjang_user, jumlah_candi) -> None:
     else:
         yakin = input(f"Apakah anda yakin ingin menghapus jin dengan username {nama_jin} (Y/N)? ")
         if yakin == "Y" or yakin == "y":
-            data = user
             for i in range(103):
-                if data[i][0] == nama_jin:
-                    data[i] = ["none","none","none"]
+                if user[i][0] == nama_jin:
+                    user[i] = ["none","none","none"]
                     break
             i=0
             while i<101 :
@@ -38,7 +37,6 @@ def hapusjin(user, candi, panjang_user, jumlah_candi) -> None:
                     candi[i] = ["none","none","none","none","none"]
                     jumlah_candi -= 1
                 i+=1
-            user = data
             print("\nJin telah berhasil dihapus dari alam gaib.")
         else:
             print("Oke, Baiklah...")
