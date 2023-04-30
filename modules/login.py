@@ -1,22 +1,22 @@
-def cek_username(username: str, user: list) -> bool:
+def cek_username(username: str, data: list, panjang:int) -> bool:
 # Mengecek Username
 
 # Kamus Lokal
 # benar: bool
     benar = False
-    for i in range (103):
-        if user[i][0] == username:
+    for i in range (panjang):
+        if data[i][0] == username:
             benar = True
     return benar
 
-def cek_password(username: str, password: str, data: list) -> bool:
+def cek_password(username: str, password: str, data: list, panjang:int) -> bool:
 # Mengecek Password
 
 # Kamus Lokal
 # benar: bool
 # temp: int 
     benar = False
-    for i in range(103):
+    for i in range(panjang):
         for j in range(2):
             if data[i][j] == username:
                 temp = j+1
@@ -36,11 +36,11 @@ def login(user: list, panjang: int) -> str:
     password = input("Password: ")
     username_sudah_benar = False
     while not username_sudah_benar:
-        if cek_username(username, user):
+        if cek_username(username, user , panjang):
             username_sudah_benar = True
             password_sudah_benar = False
             while not password_sudah_benar:
-                if cek_password(username,password,user):
+                if cek_password(username,password,user, panjang):
                     print(f"\nSelamat datang, {username}!")
                     print("Masukkan command \"help\" untuk daftar command yang dapat kamu panggil.")
                     return username
