@@ -24,7 +24,6 @@ def cek_password(username: str, password: str, data: list) -> bool:
                     benar = True
     return benar
 
-
 def login(user: list, panjang: int) -> str:
 # F1: Login
 # Login menerima username dan password kemudian akan memunculkan output berupa kebenaran dari data akun
