@@ -35,6 +35,8 @@ user = data_user
 candi = data_candi
 bahan = data_bahan
 
+
+
 print ('''
 .▄▄ · ▄▄▄ .▄▄▌   ▄▄▄· • ▌ ▄ ·.  ▄▄▄·▄▄▄▄▄    ·▄▄▄▄   ▄▄▄·▄▄▄▄▄ ▄▄▄·  ▐ ▄  ▄▄ • 
 ▐█ ▀. ▀▄.▀·██•  ▐█ ▀█ ·██ ▐███▪▐█ ▀█•██      ██▪ ██ ▐█ ▀█•██  ▐█ ▀█ •█▌▐█▐█ ▀ ▪
@@ -64,9 +66,8 @@ while not com1:
                     help(role)
                     command_roro = input(">>> ")
                 elif command_roro == "hancurkancandi":
-                    hancurkancandi(candi)
+                    panjang_candi = hancurkancandi(candi, panjang_candi)
                     command_roro = input(">>> ")
-                    ...
                 elif command_roro == "ayamberkokok":
                     ayamberkokok(panjang_candi)
                 elif command_roro == "save":
@@ -97,13 +98,12 @@ while not com1:
                     help (role)
                     command_bandung = input(">>> ")
                 elif command_bandung == "summonjin":
-                    summonjin(user, panjang_user) # data user sudah diupdate
-                    panjang_user +=1
+                    panjang_user = summonjin(user, panjang_user)
                     command_bandung = input(">>> ")
                 elif command_bandung == "hapusjin":
-                    hapusjin(user, candi, panjang_candi)
-                    panjang_user -=1
-                    print(panjang_candi)
+                    data = hapusjin(user, candi, panjang_candi, panjang_user)
+                    panjang_user = data[0]
+                    panjang_candi = data[1]
                     command_bandung = input(">>> ")
                 elif command_bandung == "ubahjin":
                     ubahjin(user, panjang_user)
@@ -112,8 +112,7 @@ while not com1:
                     batchkumpul(user, bahan)
                     command_bandung = input (">>> ")
                 elif command_bandung == "batchbangun":
-                    batchbangun(user, bahan, candi, panjang_user, panjang_candi)
-                    panjang_candi += jumlah_jin(user, "jin_pembangun")
+                    panjang_candi = batchbangun(user, bahan, candi, panjang_user, panjang_candi)
                     command_bandung = input (">>> ")
                 elif command_bandung == "laporanjin":
                     laporanjin(user, candi, bahan)
@@ -142,8 +141,7 @@ while not com1:
                     help(role)
                     command_jin_pembangun = input(">>> ")
                 elif command_jin_pembangun == "bangun":
-                    bangun(username, bahan, candi, panjang_candi)
-                    panjang_candi += 1
+                    panjang_candi = bangun(username, bahan, candi, panjang_candi)
                     command_jin_pembangun = input(">>> ")
                 elif command_jin_pembangun == "logout":
                     logout = True

@@ -13,7 +13,7 @@ def hapuscandi(candi, idx):
             candi[i] = ["none", "none", "none", "none", "none"]
         
 
-def hancurkancandi(candi):
+def hancurkancandi(candi, panjang_candi)->int:
     hancurkan = int(input('Masukkan ID candi: '))
     if hancurkan > 100:
         print("Tidak ada candi dengan ID tersebut.") 
@@ -29,6 +29,7 @@ def hancurkancandi(candi):
                             if int(candi[i][0]) == hancurkan:
                                 candi[i] = ["none", "none", "none", "none", "none"]
                     print(f'Candi ID: {hancurkan} berhasil dihancurkan')
+                    panjang_candi -= 1
                 elif yakin=='N' or yakin=='n':
                     print(f'Candi ID: {hancurkan} tidak jadi dihancurkan')
                     YorN = True
@@ -36,3 +37,5 @@ def hancurkancandi(candi):
                     continue
         else:
             print(f'Tidak ada candi ID: {hancurkan}')
+        
+        return panjang_candi

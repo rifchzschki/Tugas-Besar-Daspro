@@ -75,6 +75,7 @@ def summonjin(user, panjang) -> None:
                                 sesuai = True
                                 masukkan_data_user(username_jin, password_jin, f"jin_{role_jin}", user)
                                 print(f"\nJin {username_jin} berhasil dipanggil!")
+                                panjang+=1
                                 
                             else:
                                 print("")
@@ -86,4 +87,4 @@ def summonjin(user, panjang) -> None:
             else:
                 print(f"\nTidak ada jenis jin bernomor \"{jenis}\"! \n")
 
-
+    return panjang

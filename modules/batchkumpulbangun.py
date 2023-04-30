@@ -58,18 +58,29 @@ def isNeg (bil: int)->int:
     else:
         return bil 
     
-def masukkan_data_candi(pembuat, pasir, batu, air, candi) -> None:
-# Memasukkan data ke user ke file csv
-    # tambah data
-    # ambil data lalu ubah ke array
-    index = 0
-    found = False
-    while index < 101 and not found :
-        if candi[index][0]== 'none':
-            found = True
-        if not found:
-            index +=1
-    candi[index] = [index, pembuat, pasir, batu, air]          
+       
+
+def cekid(candi):
+    for i in range(1,101):
+        found = False
+        for j in range(i, 101):
+            if candi[j][0] != "none":
+                if i == int(candi[j][0]):
+                    found = True
+
+        if found == False:
+            return i
+    
+def masukkan_data_candi(pembuat, pasir, batu, air, candi) -> None:   
+    none = False  
+    k = 0      
+    index = cekid(candi)        
+    while k<101 and not none:
+        if candi[k][0]=="none":
+            candi[k] = [index, pembuat, pasir, batu, air]  
+            none = True
+        k += 1        
+       
 
 def cekcandi (candi: list)->bool:
     count = 0
@@ -82,7 +93,7 @@ def cekcandi (candi: list)->bool:
     else:
         return False
 
-def batchbangun(user: list, bahan: list, candi: list, jumlah_user: int)->None:
+def batchbangun(user: list, bahan: list, candi: list, jumlah_user: int, panjang_candi)->None:
     if jumlah_jin(user, "jin_pembangun") == 0:
         print("Bangun gagal. Anda tidak punya jin pembangun. Silahkan summon terlebih dahulu.")
     else:
@@ -109,7 +120,8 @@ def batchbangun(user: list, bahan: list, candi: list, jumlah_user: int)->None:
                         bahan[1][2] = int(bahan[1][2]) - pasir           
                         bahan[2][2] = int(bahan[2][2]) - batu
                         bahan[3][2] = int(bahan[3][2]) - air  
-                        masukkan_data_candi(nama_jin, p[0], p[1], p[2], candi) 
+                        masukkan_data_candi(nama_jin, p[0], p[1], p[2], candi)
+                        panjang_candi += 1 
                 i += 1
             
             if berhasil:
@@ -143,3 +155,5 @@ def batchbangun(user: list, bahan: list, candi: list, jumlah_user: int)->None:
                     total_air = p[2]
                 i += 1
                 print(f"Bangun gagal. Kurang {total_pasir} pasir, {total_batu} batu, dan {total_air} air.")
+    
+    return panjang_candi

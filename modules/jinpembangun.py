@@ -9,18 +9,28 @@ def cekbahan(bahan, pasir, batu, air):
         else :
             return True
         
-def masukkan_data_candi(pembuat, pasir, batu, air, candi) -> None:
-# Memasukkan data ke user ke file csv
-    # tambah data
-    # ambil data lalu ubah ke array
-    index = 0
-    found = False
-    while index < 101 and not found :
-        if candi[index][0]== 'none':
-            found = True
-        if not found:
-            index +=1
-    candi[index] = [index, pembuat, pasir, batu, air]          
+
+def cekid(candi):
+    for i in range(1,101):
+        found = False
+        for j in range(i, 101):
+            if candi[j][0] != "none":
+                if i == int(candi[j][0]):
+                    found = True
+
+        if found == False:
+            return i
+    
+def masukkan_data_candi(pembuat, pasir, batu, air, candi) -> None:   
+    none = False  
+    k = 0      
+    index = cekid(candi)        
+    while k<101 and not none:
+        if candi[k][0]=="none":
+            candi[k] = [index, pembuat, pasir, batu, air]  
+            none = True
+        k += 1        
+        
 
 def bangun(username, bahan, candi, jumlah_candi):
     p = lcg(1)
@@ -36,6 +46,7 @@ def bangun(username, bahan, candi, jumlah_candi):
             masukkan_data_candi(username, pasir, batu, air, candi)
             print("Candi berhasil dibangun")
             print (f"Sisa candi yang perlu dibangun: {100-jumlah_candi}")
+            jumlah_candi += 1
         else:
             print ("Candi tidak bisa dibangun.")
             print("Sisa candi yang perlu dibangun: 0")
@@ -43,5 +54,4 @@ def bangun(username, bahan, candi, jumlah_candi):
         print ("Bahan bangunan tidak mencukupi.")
         print ("Candi tidak bisa dibangun.")
 
-# algoritma pencarian index harusnya tidak seperti itu
-# masalahnya adalah ketika command==bangun, jumlah_candi tetap nambah satu padahal harusnya jangan
+    return jumlah_candi
