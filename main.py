@@ -6,6 +6,7 @@ from modules.ubahjin import *
 from modules.exit import *
 from modules.help import *
 from modules.laporanjin import *
+from modules.laporancandi import *
 from modules.jinpengumpul import *
 from modules.jinpembangun import *
 from modules.hancurkancandi import *
@@ -33,7 +34,6 @@ load()
 user = data_user
 candi = data_candi
 bahan = data_bahan
-
 
 print ('''
 .▄▄ · ▄▄▄ .▄▄▌   ▄▄▄· • ▌ ▄ ·.  ▄▄▄·▄▄▄▄▄    ·▄▄▄▄   ▄▄▄·▄▄▄▄▄ ▄▄▄·  ▐ ▄  ▄▄ • 
@@ -75,7 +75,12 @@ while not com1:
                 elif command_roro == "logout":
                     logout = True
                     sudah_login = False
-                    
+                elif command_roro == "laporancandi":
+                    print("Laporan candi hanya dapat diakses oleh akun Bandung Bondowoso.")
+                    command_roro = input(">>> ")
+                elif command_roro == "laporanjin":
+                    print("Laporan jin hanya dapat diakses oleh akun Bandung Bondowoso.")
+                    command_roro = input(">>> ")
                 elif command_roro == "login" and sudah_login:
                     print(f"Login gagal!\nAnda telah login dengan username {username}, silahkan lakukan \"logout\" sebelum melakukan login kembali.")
                     command_roro = input(">>> ")
@@ -98,6 +103,7 @@ while not com1:
                 elif command_bandung == "hapusjin":
                     hapusjin(user, candi, panjang_candi)
                     panjang_user -=1
+                    print(panjang_candi)
                     command_bandung = input(">>> ")
                 elif command_bandung == "ubahjin":
                     ubahjin(user, panjang_user)
@@ -113,16 +119,14 @@ while not com1:
                     laporanjin(user, candi, bahan)
                     command_bandung = input (">>> ")
                 elif command_bandung == "laporancandi":
-                    # laporancandi()
+                    laporancandi(candi , panjang_candi)
                     command_bandung = input(">>> ")
                 elif command_bandung == "save":
                     save(user, candi, bahan)
                     command_bandung = input(">>> ")
-
                 elif command_bandung == "logout":
                     logout = True
                     sudah_login = False
-                    
                 elif command_bandung == "login" and sudah_login:
                     print(f"Login gagal!\nAnda telah login dengan username {username}, silahkan lakukan \"logout\" sebelum melakukan login kembali.")
                     command_bandung = input(">>> ")
@@ -147,6 +151,12 @@ while not com1:
                 elif command_jin_pembangun == "save":
                     save(user, candi, bahan)
                     command_jin_pembangun = input(">>> ")
+                elif command_jin_pembangun == "laporanjin":
+                    print("Laporan jin hanya dapat diakses oleh akun Bandung Bondowoso.")
+                    command_jin_pembangun = input(">>> ")
+                elif command_jin_pembangun == "laporancandi":
+                    print("Laporan candi hanya dapat diakses oleh akun Bandung Bondowoso.")
+                    command_jin_pembangun = input(">>> ")
                 elif command_jin_pembangun == "login" and sudah_login:
                     print(f"Login gagal!\nAnda telah login dengan username {username}, silahkan lakukan \"logout\" sebelum melakukan login kembali.")
                     command_jin_pembangun = input(">>> ")
@@ -169,6 +179,12 @@ while not com1:
                     sudah_login = False
                 elif command_jin_pengumpul == "save":
                     save(user, candi, bahan)
+                    command_jin_pengumpul = input(">>> ")
+                elif command_jin_pengumpul == "laporanjin":
+                    print("Laporan jin hanya dapat diakses oleh akun Bandung Bondowoso.")
+                    command_jin_pengumpul = input(">>> ")
+                elif command_jin_pengumpul == "laporancandi":
+                    print("Laporan candi hanya dapat diakses oleh akun Bandung Bondowoso.")
                     command_jin_pengumpul = input(">>> ")
                 elif command_jin_pengumpul == "login" and sudah_login:
                     print(f"Login gagal!\nAnda telah login dengan username {username}, silahkan lakukan \"logout\" sebelum melakukan login kembali.")

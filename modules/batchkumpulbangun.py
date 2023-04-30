@@ -83,44 +83,63 @@ def cekcandi (candi: list)->bool:
         return False
 
 def batchbangun(user: list, bahan: list, candi: list, jumlah_user: int, panjang_candi: int)->None:
-    jumlah = jumlah_jin(user, "jin_pembangun")
-    panjang_candi += jumlah
-    if jumlah == 0:
+    if jumlah_jin(user, "jin_pembangun") == 0:
         print("Bangun gagal. Anda tidak punya jin pembangun. Silahkan summon terlebih dahulu.")
     else:
-        total_pasir = 0
-        total_batu = 0
-        total_air = 0
-        
-        i = 0
-        while i < jumlah_user :
-            if not cekcandi(candi):
+        if not isNone(bahan):
+            i = 0
+            total_pasir = 0
+            total_batu = 0
+            total_air = 0
+            jumlah = 0
+            berhasil = False
+            while i < jumlah_user :
                 if user[i][2]=="jin_pembangun":
                     p = lcg(1)
-                    total_pasir += p[0]
-                    total_batu += p[1]        
-                    total_air += p[2]
-                    nama_jin = user[i][0]
-                    masukkan_data_candi(nama_jin, p[0], p[1], p[2], candi) 
-            else:
-                p = lcg(1)
-                total_pasir = p[0]
-                total_batu = p[1]
-                total_air = p[2]
-            i += 1
-
-        if isNone(bahan):
-            print(f"Bangun gagal. Kurang {total_pasir} pasir, {total_batu} batu, dan {total_air} air.")
-        else:
-            if cekbahan(bahan, total_pasir, total_batu, total_air):
-                bahan[1][2] = int(bahan[1][2]) - total_pasir           
-                bahan[2][2] = int(bahan[2][2]) - total_batu
-                bahan[3][2] = int(bahan[3][2]) - total_air  
+                    pasir = p[0]
+                    batu = p[1]
+                    air = p[2]
+                    total_pasir += pasir
+                    total_batu += batu
+                    total_air += air
+                    if cekbahan(bahan, pasir, batu, air):
+                        berhasil = True
+                        nama_jin = user[i][0]
+                        jumlah += 1
+                        bahan[1][2] = int(bahan[1][2]) - pasir           
+                        bahan[2][2] = int(bahan[2][2]) - batu
+                        bahan[3][2] = int(bahan[3][2]) - air  
+                        masukkan_data_candi(nama_jin, p[0], p[1], p[2], candi) 
+                i += 1
+            
+            if berhasil:
                 print(f"Mengerahkan {jumlah} jin untuk membangun candi dengan total bahan {total_pasir} pasir, {total_batu} batu, dan {total_air} air.")
                 print(f"Jin berhasil membangun total {jumlah} candi.")
+
             else:
                 kurang_pasir = total_pasir-int(bahan[1][2])
                 kurang_batu = total_batu-int(bahan[2][2])
                 kurang_air = total_air-int(bahan[3][2])
                 print(f"Bangun gagal. Kurang {isNeg(kurang_pasir)} pasir, {isNeg(kurang_batu)} batu, dan {isNeg(kurang_air)} air.")
-
+            
+        else:
+            total_pasir = 0
+            total_batu = 0
+            total_air = 0
+            
+            i = 0
+            while i < jumlah_user :
+                if not cekcandi(candi):
+                    if user[i][2]=="jin_pembangun":
+                        p = lcg(1)
+                        total_pasir += p[0]
+                        total_batu += p[1]        
+                        total_air += p[2]
+    
+                else:
+                    p = lcg(1)
+                    total_pasir = p[0]
+                    total_batu = p[1]
+                    total_air = p[2]
+                i += 1
+                print(f"Bangun gagal. Kurang {total_pasir} pasir, {total_batu} batu, dan {total_air} air.")

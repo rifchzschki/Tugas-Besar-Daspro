@@ -61,7 +61,7 @@ def cekleksikal(string1, string2, predikat):
                 return string1
             else:
                 return string2
-print(cekleksikal("unta","eqee","malas"))
+
 
 def laporanjin(user, candi, bahan):
     total_jin_pengumpul = totaljin(user, "jin_pengumpul")
@@ -83,9 +83,9 @@ def laporanjin(user, candi, bahan):
                 jumlah += 1
         pembuat_candi[i][1] = jumlah
 
-    terajin = ["", 0]
-    n = terajin[1]
-    name = terajin[0]
+
+    n = pembuat_candi[0][1]
+    name = pembuat_candi[0][0]
     for i in range (jumlah_pembuat):
         if pembuat_candi[i][0] != "":
             if int(pembuat_candi[i][1]) >= n:
@@ -96,9 +96,8 @@ def laporanjin(user, candi, bahan):
                     name = cekleksikal(name, pembuat_candi[i][0], "rajin")
     jin_terajin = name
 
-    termalas = ["", 999]
-    n = termalas[1]
-    name = termalas[0]
+    n = pembuat_candi[0][1]
+    name = pembuat_candi[0][0]
     for i in range (jumlah_pembuat):
         if pembuat_candi[i][0] != "":
             if int(pembuat_candi[i][1]) <= n:

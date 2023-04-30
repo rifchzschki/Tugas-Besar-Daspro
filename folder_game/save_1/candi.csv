@@ -1,6 +1,5 @@
 id;pembuat;pasir;batu;air
-2;ifrit;0;1;5
-8;ifrit;2;3;3
+1;unta;2;5;3
 10;yolse;1;4;0
 11;ifrit;2;5;3
 12;unta;2;1;5
@@ -27,4 +26,14 @@ id;pembuat;pasir;batu;air
 36;unta;4;5;3
 37;yolse;5;0;2
 38;ifrit;0;5;5
-39;unta;0;5;3
+28;unta;4;3;1
+29;unta;1;4;4
+30;unta;2;3;5
+31;unta;0;1;3
+32;unta;5;4;0
+33;unta;0;5;3
+34;unta;3;0;2
+35;unta;0;5;1
+36;yolse;0;5;5
+37;ifrit;0;5;5
+38;unta;0;5;5

@@ -9,7 +9,7 @@ def cek_username(username: str, data: list) -> bool:
             benar = True
     return benar
 
-def hapusjin(user, candi, jumlah_candi) -> None:
+def hapusjin(user, candi, panjang_candi) -> None:
 # F4: Hilangkan Jin 
 # Menghapus Jin, sekaligus menghapus candi yang telah dibuat oleh jin tersebut
 
@@ -35,7 +35,7 @@ def hapusjin(user, candi, jumlah_candi) -> None:
             while i<101 :
                 if candi[i][1] == nama_jin:
                     candi[i] = ["none","none","none","none","none"]
-                    jumlah_candi -= 1
+                    panjang_candi -= 1
                 i+=1
             print("\nJin telah berhasil dihapus dari alam gaib.")
         else:

@@ -13,17 +13,14 @@ def masukkan_data_candi(pembuat, pasir, batu, air, candi) -> None:
 # Memasukkan data ke user ke file csv
     # tambah data
     # ambil data lalu ubah ke array
-    temp = candi
     index = 0
     found = False
     while index < 101 and not found :
-        for j in range(5):
-            if temp[index][0]== 'none':
-                found = True
+        if candi[index][0]== 'none':
+            found = True
         if not found:
             index +=1
-    temp[index] = [index, pembuat, pasir, batu, air]          
-    candi = temp
+    candi[index] = [index, pembuat, pasir, batu, air]          
 
 def bangun(username, bahan, candi, jumlah_candi):
     p = lcg(1)
