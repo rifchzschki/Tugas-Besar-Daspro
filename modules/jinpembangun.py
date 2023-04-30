@@ -1,6 +1,6 @@
 from modules.randomnumber import *
 
-def cekbahan(bahan, pasir, batu, air):
+def cekbahan(bahan: list, pasir: int, batu: int, air: int)->bool:
     if bahan[1][2] == "none":
         return False
     else:
@@ -10,7 +10,7 @@ def cekbahan(bahan, pasir, batu, air):
             return True
         
 
-def cekid(candi):
+def cekid(candi: list)-> int:
     for i in range(1,101):
         found = False
         for j in range(i, 101):
@@ -21,7 +21,7 @@ def cekid(candi):
         if found == False:
             return i
     
-def masukkan_data_candi(pembuat, pasir, batu, air, candi) -> None:   
+def masukkan_data_candi(pembuat: str, pasir: int, batu: int, air: int, candi: list) -> None:   
     none = False  
     k = 0      
     index = cekid(candi)        
@@ -32,7 +32,7 @@ def masukkan_data_candi(pembuat, pasir, batu, air, candi) -> None:
         k += 1        
         
 
-def bangun(username, bahan, candi, jumlah_candi):
+def bangun(username: str, bahan: list, candi: list, jumlah_candi: int)-> int:
     p = lcg(1)
     pasir = p[0]
     batu = p[1]        

@@ -2,14 +2,14 @@
 # ord(char)
 # a=97, z=122
 # A=65, Z=90
-def totaljin(user, role):
+def totaljin(user: list, role: str)-> int:
     count = 0
     for i in range (101):
         if user[i][2] == role:
             count +=1
     return count
 
-def cekleksikal(string1, string2, predikat):
+def cekleksikal(string1: str, string2: str, predikat: str)-> str:
     panjang1 = len(string1)
     panjang2 = len(string2)
 
@@ -63,7 +63,7 @@ def cekleksikal(string1, string2, predikat):
                 return string2
 
 
-def laporanjin(user, candi, bahan):
+def laporanjin(user: list, candi: list, bahan: list)-> None:
     total_jin_pengumpul = totaljin(user, "jin_pengumpul")
     total_jin_pembangun = totaljin(user, "jin_pembangun")
     total_jin = total_jin_pengumpul + total_jin_pembangun

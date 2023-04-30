@@ -1,11 +1,11 @@
-def panjang_file(folder, file):
+def panjang_file(folder: str, file: str)-> int:
     f = open(f"folder_game/{folder}/{file}.csv", "r")
     panjang = 0
     for i in f:
         panjang +=1
     return panjang
 
-def convert_to_array(folder, file, bariseff, kolom, baris_awal):
+def convert_to_array(folder: str, file: str, bariseff: int, kolom: int, baris_awal: int)-> list:
     arr = [["none" for j in range (kolom)] for i in range (baris_awal)] # baris1, bondo,roro,100 jin
     f = open(f"folder_game/{folder}/{file}.csv", "r")
     for i in range(bariseff):

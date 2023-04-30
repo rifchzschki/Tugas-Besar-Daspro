@@ -1,4 +1,4 @@
-def laporancandi(candi, panjang_candi):
+def laporancandi(candi: list, panjang_candi: int)-> None:
     totalcandi = panjang_candi-1
     if panjang_candi>=101:
         totalcandi = 100

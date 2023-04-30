@@ -8,7 +8,7 @@ def rewrite_csv(csv: str, file: str, folder_save) -> None:
     f.close()
 
 
-def conv_arr_str(arr, nama_arr):
+def conv_arr_str(arr: list, nama_arr: str)-> str:
     if nama_arr == "user":
         panjang = 103
         kolom = 3
@@ -31,7 +31,7 @@ def conv_arr_str(arr, nama_arr):
     return string
 
 
-def save(user, candi, bahan):
+def save(user: list, candi: list, bahan: list)-> None:
     folder_save = input("Masukkan nama folder: ")
     print("saving...")
     time.sleep(1)
@@ -40,7 +40,7 @@ def save(user, candi, bahan):
     candi_str = conv_arr_str(candi, "candi")
     bahan_str = conv_arr_str(bahan, "bahan")
 
-    # os.chdir("folder_game")
+
     if not os.path.isdir("folder_game"):
         os.mkdir("folder_game")
         print("Membuat folder_game ...")

@@ -60,7 +60,7 @@ def isNeg (bil: int)->int:
     
        
 
-def cekid(candi):
+def cekid(candi: list)-> int:
     for i in range(1,101):
         found = False
         for j in range(i, 101):
@@ -93,7 +93,7 @@ def cekcandi (candi: list)->bool:
     else:
         return False
 
-def batchbangun(user: list, bahan: list, candi: list, jumlah_user: int, panjang_candi)->None:
+def batchbangun(user: list, bahan: list, candi: list, jumlah_user: int, panjang_candi)-> None:
     if jumlah_jin(user, "jin_pembangun") == 0:
         print("Bangun gagal. Anda tidak punya jin pembangun. Silahkan summon terlebih dahulu.")
     else:

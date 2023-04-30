@@ -1,4 +1,4 @@
-def cek_candi(candi, hancurkan):
+def cek_candi(candi: list, hancurkan: int)-> bool:
     i = 0
     found = False
     while i < 101 and not found:
@@ -7,13 +7,13 @@ def cek_candi(candi, hancurkan):
         i+=1
     return found        
 
-def hapuscandi(candi, idx):
+def hapuscandi(candi: list, idx: int)-> None:
     for i in range (1,101):
         if candi[i][0] == idx:
             candi[i] = ["none", "none", "none", "none", "none"]
         
 
-def hancurkancandi(candi, panjang_candi)->int:
+def hancurkancandi(candi: list, panjang_candi: int)-> int:
     hancurkan = int(input('Masukkan ID candi: '))
     if hancurkan > 100:
         print("Tidak ada candi dengan ID tersebut.") 

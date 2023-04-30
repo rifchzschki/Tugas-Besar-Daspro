@@ -1,5 +1,5 @@
-def help(role):
-    # pemain belum login
+def help(role: str)-> None:
+
     if  role == "none" :
         print ("==================== HELP ====================")
         print ("1. login \nUntuk masuk menggunakan akun \n2. exit \nUntuk keluar dari program dan kembali ke terminal.")

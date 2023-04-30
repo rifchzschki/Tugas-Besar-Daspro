@@ -1,4 +1,4 @@
-def ayamberkokok(panjang):
+def ayamberkokok(panjang: int)-> None:
     print('Kukuruyuk... Kukuruyuk...\n')
     jumlah_candi= (panjang-1)
     if jumlah_candi > 100:
@@ -10,5 +10,4 @@ def ayamberkokok(panjang):
         print('Roro Jonggrang dikutuk menjadi candi')
     else :
         print('Yah, Bandung Bondowoso memenangkan permainan!')
-    
     exit()

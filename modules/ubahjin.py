@@ -9,7 +9,7 @@ def cek_username(username: str, data: list, panjang:int) -> bool:
             benar = True
     return benar
 
-def ubahjin(user, panjang) -> None:
+def ubahjin(user: list, panjang: int) -> None:
 # F5: Ubah Tipe Jin
 # Mengubah tipe jin yang telah tersedia
 

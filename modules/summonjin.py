@@ -16,7 +16,7 @@ def validasi_password(password: str) -> bool:
     else:
         return True
 
-def masukkan_data_user(username, password, role, user) -> None:
+def masukkan_data_user(username: str, password: str, role: str, user: list) -> None:
 # Memasukkan data ke user ke file csv
     # tambah data
     # ambil data lalu ubah ke array
@@ -30,7 +30,7 @@ def masukkan_data_user(username, password, role, user) -> None:
             i +=1
     user[i] = [username, password, role]          
 
-def summonjin(user, panjang) -> None:
+def summonjin(user: list, panjang: int) -> int:
 # F3: Summon Jin
 # Akses Bondowoso dalam memanggil jin, Jin maksimal yang dapat dipanggil adalah 100.
 
