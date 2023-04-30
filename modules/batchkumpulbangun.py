@@ -82,7 +82,7 @@ def cekcandi (candi: list)->bool:
     else:
         return False
 
-def batchbangun(user: list, bahan: list, candi: list, jumlah_user: int, panjang_candi: int)->None:
+def batchbangun(user: list, bahan: list, candi: list, jumlah_user: int)->None:
     if jumlah_jin(user, "jin_pembangun") == 0:
         print("Bangun gagal. Anda tidak punya jin pembangun. Silahkan summon terlebih dahulu.")
     else:

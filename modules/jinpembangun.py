@@ -42,3 +42,6 @@ def bangun(username, bahan, candi, jumlah_candi):
     else :
         print ("Bahan bangunan tidak mencukupi.")
         print ("Candi tidak bisa dibangun.")
+
+# algoritma pencarian index harusnya tidak seperti itu
+# masalahnya adalah ketika command==bangun, jumlah_candi tetap nambah satu padahal harusnya jangan
