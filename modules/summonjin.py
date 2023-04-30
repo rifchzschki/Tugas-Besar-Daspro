@@ -41,7 +41,7 @@ def summonjin(user, panjang) -> None:
 
 # Algoritma
     if panjang >= 103: # Mengembalikan nilai True apabila jumlah jin sudah 100
-        print("Jumalah Jin telah maksimal! (100 jin). Bandung tidak dapat men-summon lebih dari itu")
+        print("Jumlah Jin telah maksimal! (100 jin). Bandung tidak dapat men-summon lebih dari itu")
     else:
         print("Jenis jin yang dapat dipanggil:")
         print(" (1) Pengumpul - Bertugas mengumpulkan bahan bangunan")
