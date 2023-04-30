@@ -1,11 +1,11 @@
-def cek_username(username: str, data: list, panjang:int) -> bool:
+def cek_username(username: str, user: list) -> bool:
 # Mengecek Username
 
 # Kamus Lokal
 # benar: bool
     benar = False
-    for i in range (panjang):
-        if data[i][0] == username:
+    for i in range (103):
+        if user[i][0] == username:
             benar = True
     return benar
 
@@ -48,20 +48,20 @@ def summonjin(user, panjang) -> None:
         print(" (2) Pembangun - Bertugas membangun candi\n")
         sesuai = False
         while not sesuai: #selama nomor jenis belum sesuai
-            jenis = int(input("Masukkan nomor jenis jin yang ingin dipanggil: "))
-            if jenis == 1 or jenis == 2:
-                if jenis == 1:
+            jenis = input("Masukkan nomor jenis jin yang ingin dipanggil: ")
+            if int(jenis) == 1 or int(jenis) == 2:
+                if int(jenis) == 1:
                     jin = "Pengumpul"
                     role_jin = "pengumpul"
                 else:
                     jin = "Pembangun"
                     role_jin = "pembangun"
-                print("")
-                print(f"Memilih jin \"{jin}\".")
+
+                print(f"\nMemilih jin \"{jin}\".")
                 username_sesuai = False
                 while not username_sesuai:
                     username_jin = input("\nMasukkan username jin: ")
-                    if not cek_username(username_jin, user, panjang): #jika tidak ada data username di user.csv
+                    if not cek_username(username_jin, user): #jika tidak ada data username di user.csv
                         username_sesuai = True
                         password_sesuai = False
                         while not password_sesuai:
@@ -85,4 +85,5 @@ def summonjin(user, panjang) -> None:
 
             else:
                 print(f"\nTidak ada jenis jin bernomor \"{jenis}\"! \n")
+
 

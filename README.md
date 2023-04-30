@@ -57,5 +57,14 @@ README.md
         3. ~~pada fungsi save, tidak bisa menambahkan integer pada string pada convert_arr_str~~
 
 * (26/04/2023) <br>
+    * masalah yang ditemukan : 
         1. ~~hapusjin hanya bisa hapus jin sekali~~
         2. ~~jumlah candi batchbangun dengan bangun masih belum relevan~~
+
+* (29/04/2023) <br>
+    * masalah yang ditemukan : 
+        1. ~~masalah mark pada array yang telah dihapus~~
+        2. ketika candi dihapus lalu dibangun lagi id nya gabisa nutup yang udah dihapus
+
+* (30/04/2023) <br>
+    1. fungsi yang belum : laporancandi

@@ -1,15 +1,15 @@
-def cek_username(username: str, data: list, panjang:int) -> bool:
+def cek_username(username: str, data: list) -> bool:
 # Mengecek Username
 
 # Kamus Lokal
 # benar: bool
     benar = False
-    for i in range (panjang):
+    for i in range (103):
         if data[i][0] == username:
             benar = True
     return benar
 
-def hapusjin(user, candi, panjang_user, jumlah_candi) -> None:
+def hapusjin(user, candi, jumlah_candi) -> None:
 # F4: Hilangkan Jin 
 # Menghapus Jin, sekaligus menghapus candi yang telah dibuat oleh jin tersebut
 
@@ -21,7 +21,7 @@ def hapusjin(user, candi, panjang_user, jumlah_candi) -> None:
 
 # Algoritma
     nama_jin = input("Masukkan username jin : ") 
-    if not cek_username(nama_jin, user, panjang_user):
+    if not cek_username(nama_jin, user):
         print("\nTidak ada jin dengan username tersebut.")
 
     else:

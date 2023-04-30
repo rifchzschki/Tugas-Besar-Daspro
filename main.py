@@ -5,6 +5,7 @@ from modules.hapusjin import *
 from modules.ubahjin import *
 from modules.exit import *
 from modules.help import *
+from modules.laporanjin import *
 from modules.jinpengumpul import *
 from modules.jinpembangun import *
 from modules.hancurkancandi import *
@@ -90,36 +91,30 @@ while not com1:
                 if command_bandung == "help":
                     help (role)
                     command_bandung = input(">>> ")
-                    ...
                 elif command_bandung == "summonjin":
                     summonjin(user, panjang_user) # data user sudah diupdate
                     panjang_user +=1
                     command_bandung = input(">>> ")
-                    ...
                 elif command_bandung == "hapusjin":
-                    hapusjin(user, candi, panjang_user, panjang_candi)
+                    hapusjin(user, candi, panjang_candi)
                     panjang_user -=1
                     command_bandung = input(">>> ")
-                    ...
                 elif command_bandung == "ubahjin":
                     ubahjin(user, panjang_user)
                     command_bandung = input(">>> ")
-                    ...
                 elif command_bandung == "batchkumpul":
                     batchkumpul(user, bahan)
                     command_bandung = input (">>> ")
-                    ...
                 elif command_bandung == "batchbangun":
                     batchbangun(user, bahan, candi, panjang_user, panjang_candi)
                     panjang_candi += jumlah_jin(user, "jin_pembangun")
                     command_bandung = input (">>> ")
-                    ...
                 elif command_bandung == "laporanjin":
-                    # laporanjin()
-                    ...
+                    laporanjin(user, candi, bahan)
+                    command_bandung = input (">>> ")
                 elif command_bandung == "laporancandi":
                     # laporancandi()
-                    ...
+                    command_bandung = input(">>> ")
                 elif command_bandung == "save":
                     save(user, candi, bahan)
                     command_bandung = input(">>> ")
