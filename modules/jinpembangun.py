@@ -1,6 +1,13 @@
+# F06: Jin Pembangun
+
 from modules.randomnumber import *
 
 def cekbahan(bahan: list, pasir: int, batu: int, air: int)->bool:
+# Proses pengecekan apakah bahan bangunan cukup untuk membangun candi
+
+# Kamus Lokal
+
+# Algoritma
     if bahan[1][2] == "none":
         return False
     else:
@@ -11,6 +18,12 @@ def cekbahan(bahan: list, pasir: int, batu: int, air: int)->bool:
         
 
 def cekid(candi: list)-> int:
+# Proses pengecekan apakah id tersebut belum pernah ada yang pakai
+
+# Kamus Lokal
+# found: bool
+
+# Algoritma
     for i in range(1,101):
         found = False
         for j in range(1, 101):
@@ -22,6 +35,13 @@ def cekid(candi: list)-> int:
             return i
     
 def masukkan_data_candi(pembuat: str, pasir: int, batu: int, air: int, candi: list) -> None:   
+# Proses memasukkan data candi ke dalam array candi
+
+# Kamus Lokal
+# none: bool
+# k,index: int
+
+# Algoritma
     none = False  
     k = 0      
     index = cekid(candi)        
@@ -33,6 +53,13 @@ def masukkan_data_candi(pembuat: str, pasir: int, batu: int, air: int, candi: li
         
 
 def bangun(username: str, bahan: list, candi: list, jumlah_candi: int)-> int:
+# Proses membangun candi dari data bahan yang tersedia
+
+# Kamus Lokal
+# p: array of int
+# batu, pasir, air: int 
+
+# Algoritma
     p = lcg(1)
     pasir = p[0]
     batu = p[1]        

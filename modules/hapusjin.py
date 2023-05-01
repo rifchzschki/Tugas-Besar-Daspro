@@ -1,3 +1,5 @@
+# F4: Hilangkan Jin 
+
 def cek_username(username: str, data: list) -> bool:
 # Mengecek Username
 
@@ -10,7 +12,6 @@ def cek_username(username: str, data: list) -> bool:
     return benar
 
 def hapusjin(user: list, candi: list, panjang_candi: int, panjang_user: int) -> list:
-# F4: Hilangkan Jin 
 # Menghapus Jin, sekaligus menghapus candi yang telah dibuat oleh jin tersebut
 
 # Kamus Lokal

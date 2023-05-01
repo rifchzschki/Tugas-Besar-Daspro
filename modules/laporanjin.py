@@ -1,8 +1,15 @@
+# F09: Ambil Laporan Jin
 
 # ord(char)
 # a=97, z=122
 # A=65, Z=90
 def totaljin(user: list, role: str)-> int:
+# Menghitung total jin sesuai dengan role
+
+# Kamus Lokal
+# count: int
+
+# Algoritma
     count = 0
     for i in range (101):
         if user[i][2] == role:
@@ -10,6 +17,13 @@ def totaljin(user: list, role: str)-> int:
     return count
 
 def cekleksikal(string1: str, string2: str, predikat: str)-> str:
+# Melakukan pengecekan terhadap dua string sesuai dengan predikat yang diberikan
+
+# Kamus Lokal
+# panjang1, panjang2, indeks: int
+# masih_sama: bool
+
+# Algoritma
     panjang1 = len(string1)
     panjang2 = len(string2)
 

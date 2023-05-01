@@ -1,14 +1,28 @@
+# F14: Save
+
 import os
 import time
 
 def rewrite_csv(csv: str, file: str, folder_save) -> None:
 # Mengupdate file
+
+# Kamus Lokal
+# f : file
+
+# Algoritma
     f = open(f"{folder_save}/{file}.csv", "w")
     f.write(csv)
     f.close()
 
 
 def conv_arr_str(arr: list, nama_arr: str)-> str:
+# Mengubah array menjadi string
+
+# Kamus Lokal
+# panjang, kolom: int
+# string: int
+
+# Algoritma
     if nama_arr == "user":
         panjang = 103
         kolom = 3
@@ -32,6 +46,12 @@ def conv_arr_str(arr: list, nama_arr: str)-> str:
 
 
 def save(user: list, candi: list, bahan: list)-> None:
+# Menyimpan perubahan game pada folder tertentu
+
+# Kamus Lokal
+# folder_save, user_str, candi_str, bahan_str: str
+
+# Algoritma
     folder_save = input("Masukkan nama folder: ")
     print("saving...")
     time.sleep(1)

@@ -1,3 +1,5 @@
+# F13: Load
+
 import argparse
 import os
 import time
@@ -5,6 +7,15 @@ from modules.inisialisasi_array import *
 
 
 def load() -> None:
+# Melakukan Load data dari foldergame sebagai inisialisasi awal game
+
+# Kamus Lokal
+# data_user, data_candi, data_bahan : array of any
+# panjang_user, panjang_candi, panjang_bahan: int
+# found, finish: bool
+# nama_folder: str
+
+# Algoritma
     global data_user
     global data_candi
     global data_bahan

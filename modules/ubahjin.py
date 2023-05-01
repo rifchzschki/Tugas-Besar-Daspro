@@ -1,3 +1,5 @@
+# F05: Ubah Tipe Jin
+
 def cek_username(username: str, data: list, panjang:int) -> bool:
 # Mengecek Username
 
@@ -10,7 +12,6 @@ def cek_username(username: str, data: list, panjang:int) -> bool:
     return benar
 
 def ubahjin(user: list, panjang: int) -> None:
-# F5: Ubah Tipe Jin
 # Mengubah tipe jin yang telah tersedia
 
 # Kamus Lokal

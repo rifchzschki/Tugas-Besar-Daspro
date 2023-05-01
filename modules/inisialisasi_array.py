@@ -1,4 +1,11 @@
 def panjang_file(folder: str, file: str)-> int:
+# Menginisialisasi jumlah panjang dari suatu file
+
+# Kamus Lokal
+# f: data
+# panjang: int
+
+# Algoritma
     f = open(f"folder_game/{folder}/{file}.csv", "r")
     panjang = 0
     for i in f:
@@ -6,6 +13,15 @@ def panjang_file(folder: str, file: str)-> int:
     return panjang
 
 def convert_to_array(folder: str, file: str, bariseff: int, kolom: int, baris_awal: int)-> list:
+# Mengubah data dalam file csv menjadi array
+
+# Kamus Lokal
+# arr, arr_temp: array of str
+# f: file
+# raw_line, temp: str
+# index: int
+
+# Algoritma
     arr = [["none" for j in range (kolom)] for i in range (baris_awal)] # baris1, bondo,roro,100 jin
     f = open(f"folder_game/{folder}/{file}.csv", "r")
     for i in range(bariseff):

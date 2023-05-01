@@ -1,4 +1,11 @@
+# F15: Help
+
 def help(role: str)-> None:
+# Menjelaskan fitur apa saja yang dimiliki oleh setiap role
+
+# Kamus Lokal
+
+# Algoritma
     if  role == "none" :
         print ("==================== HELP ====================")
         print ("1. login \nUntuk masuk menggunakan akun \n2. exit \nUntuk keluar dari program dan kembali ke terminal.")

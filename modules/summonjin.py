@@ -1,8 +1,12 @@
+# F03: Summon Jin
+
 def cek_username(username: str, user: list) -> bool:
 # Mengecek Username
 
 # Kamus Lokal
 # benar: bool
+
+# Algoritma
     benar = False
     for i in range (103):
         if user[i][0] == username:
@@ -11,16 +15,23 @@ def cek_username(username: str, user: list) -> bool:
 
 def validasi_password(password: str) -> bool:
 # Untuk memastikan bahwa password memenuhi persyaratan
+
+# Kamus Lokal
+
+# Algoritma
     if len(password)<5 or len(password)>25:
         return False
     else:
         return True
 
 def masukkan_data_user(username: str, password: str, role: str, user: list) -> None:
-# Memasukkan data ke user ke file csv
-    # tambah data
-    # ambil data lalu ubah ke array
-    
+# Memasukkan data ke array user
+
+# Kamus Lokal
+# i: int
+# found: bool
+
+# Algoritma
     i = 0
     found = False
     while i < 103 and not found :
@@ -31,13 +42,12 @@ def masukkan_data_user(username: str, password: str, role: str, user: list) -> N
     user[i] = [username, password, role]          
 
 def summonjin(user: list, panjang: int) -> int:
-# F3: Summon Jin
-# Akses Bondowoso dalam memanggil jin, Jin maksimal yang dapat dipanggil adalah 100.
+# Memanggil jin, Jin maksimal yang dapat dipanggil adalah 100.
 
 # Kamus Lokal
 # sesuai, username_sesuai, password_sesuai: bool
 # jenis: int
-# jin, password_jin, username_jin: str
+# jin, role_jin, password_jin, username_jin: str
 
 # Algoritma
     if panjang >= 103: # Mengembalikan nilai True apabila jumlah jin sudah 100

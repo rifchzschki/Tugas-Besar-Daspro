@@ -1,7 +1,14 @@
+# F07: Jin Pengumpul
+
 from modules.randomnumber import *
 
-
 def kumpul(bahan: list)-> None:
+# Program mengumpulkan bahan bangunan
+
+# Kamus Lokal:
+# p: array of int
+# pasir, atus, air: int
+
     p = lcg(1)    
     print (f"Jin menemukan {p[0]} pasir, {p[1]} batu, dan {p[2]} air.")
     if bahan[1][2] == "none":

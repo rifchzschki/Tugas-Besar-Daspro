@@ -1,4 +1,13 @@
+# F11: Hancurkan Candi
+
 def cek_candi(candi: list, hancurkan: int)-> bool:
+# Melakukan pengecekan apakah id candi yang ingin dihancurkan ditemukan
+
+# Kamus Lokal
+# i: int
+# found: bool
+
+# Algoritma
     i = 0
     found = False
     while i < 101 and not found:
@@ -8,12 +17,24 @@ def cek_candi(candi: list, hancurkan: int)-> bool:
     return found        
 
 def hapuscandi(candi: list, idx: int)-> None:
+# Melakukan penghapusan (pengubahan data menjadi "none") data pada array candi dengan id sesuai indeks yang ingin dihancurkan
+
+# Kamus Lokal
+
+# Algoritma
     for i in range (1,101):
         if candi[i][0] == idx:
             candi[i] = ["none", "none", "none", "none", "none"]
         
-
 def hancurkancandi(candi: list, panjang_candi: int)-> int:
+# Melakukan penghapusan candi sesuai dengan id yang akan dihancurkan
+
+# Kamus Lokal
+# hancurkan: int
+# YorN: bool
+# yakin: str
+
+# Algoritma
     hancurkan = int(input('Masukkan ID candi: '))
     if hancurkan > 100:
         print("Tidak ada candi dengan ID tersebut.") 

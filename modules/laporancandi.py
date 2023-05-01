@@ -1,4 +1,12 @@
+# F10: Ambil Laporan Candi
+
 def laporancandi(candi: list, panjang_candi: int)-> None:
+# Melaporkan informasi tentang candi
+
+# Kamus Lokal
+# totalcandi,pasir,batu,air,harga_termahal,harga,index1,candi_termahal,harga_termurah,index2,candi_termurah: int
+
+# Algoritma
     totalcandi = panjang_candi-1
     if panjang_candi>=101:
         totalcandi = 100

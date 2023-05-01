@@ -1,6 +1,14 @@
+# F08: Batch Kumpul/Bangun
+
 from modules.randomnumber import *
 
 def jumlah_jin(user:list, role:str) -> int:
+# mereturn jumlah jin sesuai role nya
+
+# Kamus Lokal
+# count: int
+
+# Algoritma
     count = 0
     for i in range (103):
         if user[i][2] == role:
@@ -8,22 +16,35 @@ def jumlah_jin(user:list, role:str) -> int:
     return count
 
 def kumpul_bahan(bahan:list) -> list:
+# mereturn data bahan bangunan yang telah dikumpulkan
+
+# Kamus Lokal
+# p,data_bahan: array of int
+
+# Algoritma
     p = lcg(1)
     data_bahan = [p[0], p[1], p[2]]
     if bahan[1][2] == "none":
-        bahan[1] =["pasir", "desc", data_bahan[0]]
-        bahan[2] =["batu", "desc", data_bahan[1]]
-        bahan[3] =["air", "desc", data_bahan[2]]
+        bahan[1] =["pasir", "desc", p[0]]
+        bahan[2] =["batu", "desc", p[1]]
+        bahan[3] =["air", "desc", p[2]]
     else:
-        pasir = int(bahan[1][2]) + int(data_bahan[0])
-        batu = int(bahan[2][2]) + int(data_bahan[1])
-        air = int(bahan[3][2]) + int(data_bahan[2])
+        pasir = int(bahan[1][2]) + p[0]
+        batu = int(bahan[2][2]) + p[1]
+        air = int(bahan[3][2]) + p[2]
         bahan[1] =["pasir", "desc", pasir]
         bahan[2] =["batu", "desc", batu]
         bahan[3] =["air", "desc", air]
     return data_bahan
 
 def batchkumpul(user: list, bahan: list)-> None:
+# Melakukan pengumpulan bahan bangunan dengan perulangan sebanyak total jin pengumpul
+
+# Kamus Lokal
+# jumlah, iteration: int
+# data_bahan, data_kumpul: array of int
+
+# Algoritma
     jumlah = jumlah_jin(user, "jin_pengumpul")
     data_bahan = [0,0,0]
     if jumlah == 0 :
@@ -40,19 +61,34 @@ def batchkumpul(user: list, bahan: list)-> None:
         print(f"Jin menemukan total {data_bahan[0]} pasir, {data_bahan[1]} batu, dan {data_bahan[2]} air.")
 
     
-def cekbahan(bahan: list, pasir: int, batu: int, air: int)->bool:
+def cekbahan(bahan: list, pasir: int, batu: int, air: int)-> bool:
+# Proses pengecekan apakah bahan bangunan cukup untuk membangun candi
+
+# Kamus Lokal
+
+# Algoritma
     if pasir > int(bahan[1][2]) or batu > int(bahan[2][2]) or air > int(bahan[3][2]): 
         return False
     else :
         return True
     
-def isNone (bahan: list)->bool:
+def isNone (bahan: list)-> bool:
+# Proses pengecekan apakah bahan masih belum dibuat sama sekali
+
+# Kamus Lokal
+
+# Algoritma
     if bahan[1][2] == "none":
         return True
     else:
         return False
     
 def isNeg (bil: int)->int:
+# Proses memutlakkan bilangan
+
+# Kamus Lokal
+
+# Algoritma
     if bil<0:
         return 0
     else:
@@ -61,6 +97,12 @@ def isNeg (bil: int)->int:
        
 
 def cekid(candi: list)-> int:
+# Proses pengecekan apakah id tersebut belum pernah ada yang pakai
+
+# Kamus Lokal
+# found: bool
+
+# Algoritma
     for i in range(1,101):
         found = False
         for j in range(1, 101):
@@ -72,6 +114,13 @@ def cekid(candi: list)-> int:
             return i
     
 def masukkan_data_candi(pembuat, pasir, batu, air, candi) -> None:   
+# Proses memasukkan data candi ke dalam array candi
+
+# Kamus Lokal
+# none: bool
+# k,index: int
+
+# Algoritma
     none = False  
     k = 0      
     index = cekid(candi)        
@@ -82,7 +131,13 @@ def masukkan_data_candi(pembuat, pasir, batu, air, candi) -> None:
         k += 1        
        
 
-def cekcandi (candi: list)->bool:
+def cekcandi (candi: list)-> bool:
+# Proses pengecekan apakah jumlah candi sudah 100?
+
+# Kamus Lokal
+# count: int
+
+# Algoritma
     count = 0
     for i in range (101):
         if candi[i][1] != "none":
@@ -94,6 +149,12 @@ def cekcandi (candi: list)->bool:
         return False
 
 def batchbangun(user: list, bahan: list, candi: list, jumlah_user: int, panjang_candi)-> int:
+# Proses membangun candi dengan perulangan sebanyak jumlah jin pembangun
+
+# Kamus Lokal
+# i, total_pasir, total_batu, total_air, used_pasir, used_batu, used_air, kurang_pasir, kurang_batu, kurang_air, jumlah: int
+# berhasil: bool
+# p: array of integer
     if jumlah_jin(user, "jin_pembangun") == 0:
         print("Bangun gagal. Anda tidak punya jin pembangun. Silahkan summon terlebih dahulu.")
     else:

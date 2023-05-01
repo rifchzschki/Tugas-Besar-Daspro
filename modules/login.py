@@ -1,8 +1,12 @@
+# F1: Login
+
 def cek_username(username: str, data: list, panjang:int) -> bool:
 # Mengecek Username
 
 # Kamus Lokal
 # benar: bool
+
+# Algoritma
     benar = False
     for i in range (panjang):
         if data[i][0] == username:
@@ -14,7 +18,9 @@ def cek_password(username: str, password: str, data: list, panjang:int) -> bool:
 
 # Kamus Lokal
 # benar: bool
-# temp: int 
+# temp: int
+
+# Algoritma  
     benar = False
     for i in range(panjang):
         for j in range(2):
@@ -25,11 +31,11 @@ def cek_password(username: str, password: str, data: list, panjang:int) -> bool:
     return benar
 
 def login(user: list, panjang: int) -> str:
-# F1: Login
 # Login menerima username dan password kemudian akan memunculkan output berupa kebenaran dari data akun
 
 # Kamus Lokal
 # username,password : str
+# username_sudah_benar, password_sudah_benar: bool
 
 # Algoritma
     username = input("Username: ")

@@ -1,6 +1,13 @@
 import time
 
 def lcg(x: int)-> list:
+# Untuk menentukan array dengan 3 angka random
+
+# Kamus Lokal
+# seed,unit, num_base: int
+# a,c,m, arr: array of int
+
+# Algoritma
     seed = int(time.time() * (10**7)) 
     a = [75, 1664525, 22695477]
     c = [74, 1013904223, 1]
