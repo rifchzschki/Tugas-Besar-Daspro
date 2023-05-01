@@ -15,7 +15,6 @@ folder_game
 --> save_2
 --> ....
 modules
---> helper.py
 --> login.py
 --> hapusjin.py
 --> save.py
