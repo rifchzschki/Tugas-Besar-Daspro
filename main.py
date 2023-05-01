@@ -1,3 +1,5 @@
+# Program Utama
+
 from modules.load import *
 from modules.login import *
 from modules.summonjin import *
@@ -15,11 +17,22 @@ from modules.batchkumpulbangun import *
 from modules.save import *
 import os
 
+# Kamus
+# user, candi, bahan: array of any
+# sudah_login, logout com1: bool
+# command, command_bandung, command_roro, command_jin_pembangun, command_jin_pengumpul, role: str
+
+# Algoritma
 def role_user(user: list, nama_jin: str)-> str:
-    data = user
+# Menentukan role dari user
+
+# Kamus Lokal
+# jin: str
+    
+# Algoritma
     for i in range(103):
-        if data[i][0] == nama_jin:
-            jin = data[i][2]
+        if user[i][0] == nama_jin:
+            jin = user[i][2]
     return jin
 
 load()
