@@ -102,6 +102,9 @@ def batchbangun(user: list, bahan: list, candi: list, jumlah_user: int, panjang_
             total_pasir = 0
             total_batu = 0
             total_air = 0
+            used_pasir = 0
+            used_batu = 0
+            used_air = 0
             jumlah = 0
             berhasil = False
             while i < jumlah_user :
@@ -117,6 +120,9 @@ def batchbangun(user: list, bahan: list, candi: list, jumlah_user: int, panjang_
                         berhasil = True
                         nama_jin = user[i][0]
                         jumlah += 1
+                        used_pasir += pasir
+                        used_batu += batu
+                        used_air += air
                         bahan[1][2] = int(bahan[1][2]) - pasir           
                         bahan[2][2] = int(bahan[2][2]) - batu
                         bahan[3][2] = int(bahan[3][2]) - air  
@@ -125,7 +131,7 @@ def batchbangun(user: list, bahan: list, candi: list, jumlah_user: int, panjang_
                 i += 1
             
             if berhasil:
-                print(f"Mengerahkan {jumlah} jin untuk membangun candi dengan total bahan {total_pasir} pasir, {total_batu} batu, dan {total_air} air.")
+                print(f"Mengerahkan {jumlah} jin untuk membangun candi dengan total bahan {used_pasir} pasir, {used_batu} batu, dan {used_air} air.")
                 print(f"Jin berhasil membangun total {jumlah} candi.")
                 print (f"Sisa candi yang perlu dibangun: {101-panjang_candi}")
 
