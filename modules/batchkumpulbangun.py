@@ -93,7 +93,7 @@ def cekcandi (candi: list)->bool:
     else:
         return False
 
-def batchbangun(user: list, bahan: list, candi: list, jumlah_user: int, panjang_candi)-> None:
+def batchbangun(user: list, bahan: list, candi: list, jumlah_user: int, panjang_candi)-> int:
     if jumlah_jin(user, "jin_pembangun") == 0:
         print("Bangun gagal. Anda tidak punya jin pembangun. Silahkan summon terlebih dahulu.")
     else:
@@ -127,6 +127,8 @@ def batchbangun(user: list, bahan: list, candi: list, jumlah_user: int, panjang_
             if berhasil:
                 print(f"Mengerahkan {jumlah} jin untuk membangun candi dengan total bahan {total_pasir} pasir, {total_batu} batu, dan {total_air} air.")
                 print(f"Jin berhasil membangun total {jumlah} candi.")
+                print (f"Sisa candi yang perlu dibangun: {101-panjang_candi}")
+
 
             else:
                 kurang_pasir = total_pasir-int(bahan[1][2])
