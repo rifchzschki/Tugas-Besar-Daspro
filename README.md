@@ -64,8 +64,8 @@ README.md
 * (29/04/2023) <br>
     * masalah yang ditemukan : 
         1. ~~masalah mark pada array yang telah dihapus~~
-        2. ketika candi dihapus lalu dibangun lagi id nya gabisa nutup yang udah dihapus (pas bangun candi malah lanjut id (panjang-1))
+        2. ~~ketika candi dihapus lalu dibangun lagi id nya gabisa nutup yang udah dihapus (pas bangun candi malah lanjut id (panjang-1))~~
 
 * (30/04/2023) <br>
-    1. ~fungsi yang belum : laporancandi~
-    2. sisa candi tetap berkurang ketika candi tidak berhasil dibangun
+    1. ~~fungsi yang belum : laporancandi~~
+    2. ~~sisa candi tetap berkurang ketika candi tidak berhasil dibangun~~
