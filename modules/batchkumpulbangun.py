@@ -63,7 +63,7 @@ def isNeg (bil: int)->int:
 def cekid(candi: list)-> int:
     for i in range(1,101):
         found = False
-        for j in range(i, 101):
+        for j in range(1, 101):
             if candi[j][0] != "none":
                 if i == int(candi[j][0]):
                     found = True
