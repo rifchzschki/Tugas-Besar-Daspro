@@ -2,7 +2,7 @@ def cek_candi(candi: list, hancurkan: int)-> bool:
     i = 0
     found = False
     while i < 101 and not found:
-        if candi[i][0] == str(hancurkan):
+        if str(candi[i][0]) == str(hancurkan):
             found = True
         i+=1
     return found        

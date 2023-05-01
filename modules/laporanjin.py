@@ -71,7 +71,8 @@ def laporanjin(user: list, candi: list, bahan: list)-> None:
     pembuat_candi = [["", 0]for i in range(101)]
     jumlah_pembuat = 0
     for i in range (3,103):
-        if user[i][0] != "none":
+        if user[i][0] != "none" and user[i][2] == "jin_pembangun":
+
             pembuat_candi [jumlah_pembuat][0] = user[i][0]
             jumlah_pembuat += 1
             
