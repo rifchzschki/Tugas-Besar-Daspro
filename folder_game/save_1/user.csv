@@ -1,9 +1,9 @@
 username;password;role
 Bondowoso;cintaroro;bandung_bondowoso
 Roro;gasukabondo;roro_jonggrang
-jina;abcde;jin_pengumpul
-jun;abcde;jin_pengumpul
-jen;abcde;jin_pengumpul
-ifrit;IfritGanteng;jin_pembangun
-jin dan jun;abcde;jin_pembangun
-jintomang;abcde;jin_pembangun
+jinA;abcde;jin_pengumpul
+jinB;abcde;jin_pengumpul
+jinC;abcde;jin_pengumpul
+jin1;abcde;jin_pembangun
+jin2;abcde;jin_pembangun
+jin3;abcde;jin_pembangun
